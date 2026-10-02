@@ -2,6 +2,7 @@ import tempfile
 import unittest
 import zipfile
 from pathlib import Path
+from unittest.mock import patch
 
 import test_support  # noqa: F401
 from pii_regex_scanner import engine
@@ -13,6 +14,20 @@ class ExtractionTests(unittest.TestCase):
         engine.load_identity_anchor_config(str(test_support.PROJECT_DIR / "rules"))
         engine.load_rules(str(test_support.PROJECT_DIR / "rules"))
         engine.load_table_column_rules(str(test_support.PROJECT_DIR / "rules"))
+
+    def test_nlp_person_identifier_resolution_requires_subject_semantics(self):
+        self.addCleanup(engine.set_nlp_mode, engine.SCAN_NLP_ENABLED)
+        engine.set_nlp_mode(True)
+        with patch.object(engine, "nlp_header_suggestion", return_value=("person id", "medium")):
+            for label in ("Reference No", "Reference Number", "Ref No", "Order Reference No"):
+                with self.subTest(label=label):
+                    self.assertEqual(engine.resolve_table_header(label), "")
+            for label in ("Customer Reference No", "Person Reference", "Applicant Reference"):
+                with self.subTest(label=label):
+                    self.assertEqual(engine.resolve_table_header(label), "person id")
+            for label in ("Candidate ID", "EMPLID", "ID"):
+                with self.subTest(label=label):
+                    self.assertEqual(engine.resolve_table_header(label), "person id")
 
     def test_text_decoding_and_binary_detection(self):
         text = "hello £"

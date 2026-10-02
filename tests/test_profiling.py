@@ -353,8 +353,22 @@ class ProfilingTests(unittest.TestCase):
             by_label = {row["source_label"]: row for row in rows}
             self.assertEqual(set(by_label), {"Reference No", "Course Start Date"})
             self.assertEqual(by_label["Reference No"]["processing_decision"], "review_only")
+            self.assertEqual(by_label["Reference No"]["resolved_header"], "")
+            self.assertEqual(by_label["Reference No"]["suggested_header"], "person id")
+            self.assertEqual(by_label["Reference No"]["suggestion_source"], "nlp_label_inference")
             self.assertEqual(by_label["Course Start Date"]["processing_decision"], "review_only")
             self.assertTrue(by_label["Reference No"]["sample_values_preview"])
+
+            with (output_dir / "3.Profiling" / "schema_plan.csv").open(newline="", encoding="utf-8") as handle:
+                schema_rows = {row["raw_header"]: row for row in csv.DictReader(handle)}
+            reference_schema = schema_rows["Reference No"]
+            self.assertEqual(reference_schema["resolved_header"], "")
+            self.assertEqual(reference_schema["suggested_type"], "person id")
+            self.assertEqual(reference_schema["scan_action"], "review_only_raw_fallback")
+            self.assertEqual(
+                reference_schema["reason"],
+                "review_only:nlp_label_inference:identifier_values_without_subject_semantics",
+            )
 
             with candidates_path.open(newline="", encoding="utf-8") as handle:
                 candidate_rows = list(csv.DictReader(handle))

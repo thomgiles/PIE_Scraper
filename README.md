@@ -259,6 +259,8 @@ Tables that look transposed are rotated before labelled row text is produced. Th
 
 With `--nlp TRUE`, the scanner and profiler can use NLP-assisted header similarity for weak or unfamiliar structured labels. NLP is deliberately advisory: exact table-column rules, validators, and context guards still decide whether evidence is emitted. This is intended to improve header/index-key interpretation, not to permit broad free-text PII extraction.
 
+In profiling, generic reference labels such as `Reference No` remain review-only when NLP suggests a person identifier without person-related wording in the source label.
+
 The profiler also uses local vocabulary resources under `resources/vocabularies/` for demographic, country/nationality, marital-status, disability/support, NHS, HESA, and UCAS-style inference. These vocabularies are used to suggest candidate header rules and to identify review-only columns whose values look semantically meaningful but should not automatically become emitted evidence.
 
 ## Main outputs

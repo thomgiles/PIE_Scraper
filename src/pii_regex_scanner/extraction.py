@@ -559,6 +559,14 @@ def scan_nlp_header_suggestion_supported(header, suggested_header):
             return True
         return False
 
+    if suggested_header == "person id":
+        if rule_slug(header) in {"emplid", "empl_id"}:
+            return True
+        # Generic references may identify orders or documents rather than people.
+        subject_tokens = {"candidate", "applicant", "person", "customer", "user", "employee", "staff", "student", "member"}
+        id_tokens = {"id", "identifier", "number", "no", "ref", "reference"}
+        return bool(subject_tokens & label_tokens and id_tokens & label_tokens)
+
     if suggested_header == "citizenship country":
         if any(phrase in label_text for phrase in (
             "country of nationality",

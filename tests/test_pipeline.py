@@ -121,7 +121,7 @@ class PipelineCliTests(unittest.TestCase):
 
             fresh = subprocess.run(base, check=False, capture_output=True, text=True)
             self.assertEqual(fresh.returncode, 0, fresh.stderr + fresh.stdout)
-            self.assertIn("direct CSV streaming discovery", fresh.stdout)
+            self.assertIn("Stage 4/7: discovery and regex scanning", fresh.stdout)
             self.assertIn("SQLite evidence store: not used", fresh.stdout)
             self.assertTrue((outputs / "4.Regex_Scanning" / "linked_evidence.csv").exists())
             self.assertTrue((outputs / "5.Clustering" / "clusters.csv").exists())
@@ -141,7 +141,7 @@ class PipelineCliTests(unittest.TestCase):
                 text=True,
             )
             self.assertEqual(resume.returncode, 0, resume.stderr + resume.stdout)
-            self.assertIn("Resume mode: clustering", resume.stdout)
+            self.assertIn("Resume mode: Stage 5 clustering", resume.stdout)
             self.assertIn("reclustering linked evidence", resume.stdout)
 
     def test_integrated_profile_mode_writes_discovery_and_profile_outputs(self):
