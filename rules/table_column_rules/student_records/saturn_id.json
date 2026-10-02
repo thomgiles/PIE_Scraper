@@ -1,0 +1,19 @@
+{
+  "canonical_header": "Saturn ID",
+  "pattern_name": "student_records_saturn_id_column",
+  "evidence_type": "Saturn ID",
+  "confidence": "high",
+  "risk_tier": "tier_1_strong_identifier",
+  "normalization": "compact_upper",
+  "validator": "valid_saturn_id",
+  "emit_cell_value": true,
+  "risk_roles": [
+    "id"
+  ],
+  "is_identifiable": true,
+  "is_high_risk_standalone": true,
+  "header_patterns": [
+    "\\bsaturn\\s*(?:id|number|no)\\b",
+    "\\bcurr\\s*saturn\\s*id\\b"
+  ]
+}

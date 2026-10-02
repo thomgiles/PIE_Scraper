@@ -1,0 +1,5 @@
+ID,First Name,Last Name,UoN email,Other Email,DOB,Phone,Passport Number,Case Note
+STU1234567,Jane,Smith,jane.smith@example.ac.uk,,2003-06-06,07700900020,P700000020,exposed review record
+STU2233445,Maria,Gomez,,maria.gomez@example.ac.uk,2004-07-07,07700900021,P700000021,exposed review record
+STU3344556,Li,Wei,li.wei@example.ac.uk,,2005-08-08,07700900022,P700000022,exposed review record
+STU5550001,Robin,Missing,,robin.missing@example.ac.uk,1998-09-09,07700900023,P700000023,exposed review record

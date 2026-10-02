@@ -1,0 +1,7 @@
+{
+  "canonical_header": "student id",
+  "pattern_name": "student_records_student_id_column",
+  "header_patterns": [
+    "\\bstudent\\s*(?:id|number|no)\\b"
+  ]
+}

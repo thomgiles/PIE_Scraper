@@ -1,0 +1,10 @@
+{
+  "canonical_header": "last name",
+  "name_part": "last",
+  "pattern_name": "name_last_name_column",
+  "header_patterns": [
+    "\\blast\\s*name\\b",
+    "\\bfamily\\s*name\\b",
+    "\\bsurname\\b"
+  ]
+}

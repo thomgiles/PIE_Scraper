@@ -1,0 +1,9 @@
+{
+  "canonical_header": "national id",
+  "pattern_name": "identity_documents_national_id_column",
+  "header_patterns": [
+    "\\bnational\\s*id\\b",
+    "\\bnational\\s*identity\\b",
+    "\\bchina\\s*nid\\b"
+  ]
+}

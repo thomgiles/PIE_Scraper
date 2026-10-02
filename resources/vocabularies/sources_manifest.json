@@ -1,0 +1,148 @@
+{
+  "created_for": "PII structured-column inference",
+  "notes": [
+    "Use official standards where categories are stable and public.",
+    "Use curated seed vocabularies for semantic inference where no single official code list is practical.",
+    "Some source families are represented here as source targets/notes because the upstream material is large or distributed."
+  ],
+  "sources": [
+    {
+      "id": "govuk_ethnic_groups_2021",
+      "family": "ONS / UK government demographic category lists",
+      "status": "captured_locally",
+      "source_type": "official_source",
+      "title": "List of ethnic groups",
+      "url": "https://www.ethnicity-facts-figures.service.gov.uk/style-guide/ethnic-groups/",
+      "local_resources": [
+        "ons_ethnic_groups_2021_england_wales.json"
+      ]
+    },
+    {
+      "id": "ons_ethnic_group_national_identity_religion_guide",
+      "family": "ONS / UK government demographic category lists",
+      "status": "linked",
+      "source_type": "official_source",
+      "title": "Ethnic group, national identity and religion",
+      "url": "https://www.ons.gov.uk/methodology/classificationsandstandards/measuringequality/ethnicgroupnationalidentityandreligion",
+      "local_resources": [
+        "ons_ethnic_groups_2021_england_wales.json",
+        "ons_religion_response_options_england_wales_2021.json"
+      ]
+    },
+    {
+      "id": "ons_religion_england_wales_census_2021",
+      "family": "religion / ethnicity category vocabularies used in education/public sector exports",
+      "status": "captured_locally",
+      "source_type": "official_source",
+      "title": "Religion, England and Wales: Census 2021",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021",
+      "local_resources": [
+        "ons_religion_response_options_england_wales_2021.json"
+      ]
+    },
+    {
+      "id": "nhs_data_model_dictionary_target",
+      "family": "NHS / healthcare code sets",
+      "status": "captured_locally_from_seed_plus_official_target",
+      "source_type": "official_source",
+      "title": "NHS Data Model and Dictionary",
+      "url": "https://www.datadictionary.nhs.uk/",
+      "local_resources": [
+        "nhs_demographic_code_sets_seed.json",
+        "disability_and_adjustment_terms.json"
+      ]
+    },
+    {
+      "id": "nhs_data_dictionary_archive_target",
+      "family": "NHS / healthcare code sets",
+      "status": "source_target",
+      "source_type": "official_source",
+      "title": "NHS Data Dictionary archive / lookup target",
+      "url": "https://digital.nhs.uk/services/data-collections-service/data-collections-development/data-standards-and-collections",
+      "local_resources": []
+    },
+    {
+      "id": "hesa_source_target",
+      "family": "HESA / student-data dictionaries",
+      "status": "captured_locally_from_seed_plus_official_target",
+      "source_type": "official_source",
+      "title": "HESA coding manuals and student data collection",
+      "url": "https://www.hesa.ac.uk/collection",
+      "local_resources": [
+        "student_support_and_contextual_terms.json",
+        "hesa_student_data_terms_seed.json",
+        "public_sector_demographic_variants.json",
+        "disability_and_adjustment_terms.json"
+      ]
+    },
+    {
+      "id": "ucas_source_target",
+      "family": "UCAS / student-data dictionaries",
+      "status": "captured_locally_from_seed_plus_official_target",
+      "source_type": "official_source",
+      "title": "UCAS undergraduate application guidance",
+      "url": "https://www.ucas.com/",
+      "local_resources": [
+        "student_support_and_contextual_terms.json",
+        "ucas_applicant_terms_seed.json",
+        "disability_and_adjustment_terms.json"
+      ]
+    },
+    {
+      "id": "iso_3166_target",
+      "family": "ISO country/nationality lists",
+      "status": "source_target",
+      "source_type": "official_source",
+      "title": "ISO 3166 country codes",
+      "url": "https://www.iso.org/iso-3166-country-codes.html",
+      "local_resources": [
+        "country_name_and_nationality_seed.json",
+        "build_country_names_from_babel.py"
+      ]
+    },
+    {
+      "id": "common_marital_status_seed",
+      "family": "common marital-status vocabularies",
+      "status": "captured_locally",
+      "source_type": "curated_seed",
+      "title": "Common marital status terms",
+      "url": "",
+      "local_resources": [
+        "common_marital_status_terms.json"
+      ]
+    },
+    {
+      "id": "student_support_seed",
+      "family": "education/public sector support/status vocabularies",
+      "status": "captured_locally",
+      "source_type": "curated_seed",
+      "title": "Student support and contextual participation terms",
+      "url": "",
+      "local_resources": [
+        "student_support_and_contextual_terms.json"
+      ]
+    },
+    {
+      "id": "public_sector_demographic_variants",
+      "family": "religion / ethnicity category vocabularies used in education/public sector exports",
+      "status": "captured_locally",
+      "source_type": "curated_seed",
+      "title": "Extended public-sector demographic variants",
+      "url": "",
+      "local_resources": [
+        "public_sector_demographic_variants.json"
+      ]
+    },
+    {
+      "id": "disability_adjustment_seed",
+      "family": "disability/support vocabularies",
+      "status": "captured_locally",
+      "source_type": "curated_seed",
+      "title": "Disability and adjustment vocabulary",
+      "url": "",
+      "local_resources": [
+        "disability_and_adjustment_terms.json"
+      ]
+    }
+  ]
+}

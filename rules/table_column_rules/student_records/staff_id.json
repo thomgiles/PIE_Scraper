@@ -1,0 +1,10 @@
+{
+  "canonical_header": "staff id",
+  "pattern_name": "student_records_staff_id_column",
+  "header_patterns": [
+    "\\bstaff\\s*(?:id|number|no)\\b",
+    "\\bemployee\\s*(?:id|number|no)\\b",
+    "\\bmember\\s*(?:id|number|no)\\b",
+    "\\buser\\s*(?:id|number|no)\\b"
+  ]
+}

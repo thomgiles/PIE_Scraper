@@ -1,0 +1,14 @@
+evidence_type,pattern_name,finding_count,unique_value_count,file_count,confidence,evidence_tier,not_matched,matched_to_synthetic_slim_contacts
+Address,assembled_table_address,2,2,1,high,tier_3_supporting_evidence,2,0
+Citizenship Country,demographics_citizenship_country_column,1,1,1,high,tier_2_sensitive_contextual,1,0
+DOB,demographics_dob_column,12194,222,177,high,tier_2_sensitive_contextual,1839,10355
+DOB,demographics_dob_context,424,116,104,high,tier_2_sensitive_contextual,410,14
+Identity Document File,documents_identity_document_file_reference,92,92,92,medium,tier_3_supporting_evidence,92,0
+Institutional Email,contact_location_email,16956,9019,355,high,tier_1_strong_identifier,6545,10411
+IP Address,technical_ipv4,4016,2566,96,low,tier_3_supporting_evidence,4005,11
+Known Person Identifier: person id,person_table_exact_match,154,11,78,high,tier_1_strong_identifier,0,154
+Name,assembled_table_name,1172,5,86,high,tier_3_supporting_evidence,1172,0
+Name,person_table_authoritative_name,10484,11,215,high,tier_3_supporting_evidence,0,10484
+Name,person_table_exact_match,10419,10,168,high,tier_3_supporting_evidence,0,10419
+Passport,identity_documents_passport_context,11634,9085,202,high,tier_1_strong_identifier,1255,10379
+Phone,contact_location_uk_phone,11565,9081,136,medium,tier_3_supporting_evidence,1201,10364

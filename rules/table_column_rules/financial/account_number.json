@@ -1,0 +1,8 @@
+{
+  "canonical_header": "account number",
+  "pattern_name": "financial_account_number_column",
+  "header_patterns": [
+    "\\baccount\\s*(?:number|no)\\b",
+    "\\bbank\\s*account\\b"
+  ]
+}

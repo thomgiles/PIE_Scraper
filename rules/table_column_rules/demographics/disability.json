@@ -1,0 +1,31 @@
+{
+  "canonical_header": "disability",
+  "pattern_name": "demographics_disability_column",
+  "header_patterns": [
+    "\\bdisability\\b",
+    "\\bdisabled\\b",
+    "\\baccessibility\\b",
+    "\\breasonable[ _-]*adjustment\\b"
+  ],
+  "evidence_type": "Disability",
+  "emit_cell_value": true,
+  "context_guard": {
+    "required_tokens": [
+      "disability",
+      "disabled",
+      "accessibility",
+      "adjustment",
+      "impairment"
+    ],
+    "required_phrases": [
+      "reasonable adjustment"
+    ]
+  },
+  "confidence": "high",
+  "risk_tier": "tier_2_sensitive_contextual",
+  "normalization": "none",
+  "validator": "valid_disability_value",
+  "risk_roles": [
+    "disability"
+  ]
+}

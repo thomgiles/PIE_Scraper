@@ -1,0 +1,8 @@
+{
+  "canonical_header": "SLC ID",
+  "pattern_name": "student_records_slc_id_column",
+  "header_patterns": [
+    "\\bslc\\b",
+    "\\bslc\\s*(?:id|number|no)\\b"
+  ]
+}

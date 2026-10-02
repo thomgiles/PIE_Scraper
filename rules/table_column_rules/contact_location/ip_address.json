@@ -1,0 +1,10 @@
+{
+  "canonical_header": "IP Address",
+  "pattern_name": "contact_location_ip_address_column",
+  "header_patterns": [
+    "\\bip\\s*address\\b",
+    "\\bipaddress\\b",
+    "\\bipv4\\b",
+    "\\bipv6\\b"
+  ]
+}

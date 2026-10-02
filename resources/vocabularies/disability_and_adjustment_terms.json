@@ -1,0 +1,91 @@
+{
+  "source_type": "curated_seed",
+  "notes": [
+    "Seed vocabulary for disability, impairment, access, and support columns in education and public-sector exports."
+  ],
+  "header_aliases": [
+    "disability",
+    "disability status",
+    "known disability",
+    "impairment",
+    "long term condition",
+    "access requirements",
+    "access needs",
+    "reasonable adjustments",
+    "adjustment needs",
+    "disabled students allowance",
+    "dsa",
+    "support needs",
+    "special support"
+  ],
+  "groups": {
+    "no_known_disability": [
+      "no known disability",
+      "none",
+      "no",
+      "n"
+    ],
+    "specific_learning_difficulty": [
+      "specific learning difficulty",
+      "spld",
+      "dyslexia",
+      "dyspraxia",
+      "dyscalculia"
+    ],
+    "social_communication_impairment": [
+      "social or communication impairment",
+      "social communication impairment",
+      "autism spectrum condition",
+      "autistic spectrum condition",
+      "asc",
+      "asd"
+    ],
+    "mental_health_condition": [
+      "mental health condition",
+      "mental health difficulty",
+      "anxiety",
+      "depression",
+      "bipolar disorder"
+    ],
+    "long_standing_illness": [
+      "long standing illness",
+      "long-standing illness",
+      "chronic illness",
+      "medical condition"
+    ],
+    "physical_or_mobility_impairment": [
+      "physical impairment",
+      "mobility impairment",
+      "wheelchair user",
+      "mobility issue"
+    ],
+    "hearing_impairment": [
+      "deaf",
+      "hearing impairment",
+      "serious hearing impairment"
+    ],
+    "visual_impairment": [
+      "blind",
+      "visual impairment",
+      "serious visual impairment"
+    ],
+    "other_or_multiple_impairments": [
+      "other disability",
+      "other impairment",
+      "two or more impairments",
+      "multiple impairments"
+    ],
+    "adjustment_or_support": [
+      "reasonable adjustment",
+      "exam adjustment",
+      "note taker",
+      "sign language interpreter",
+      "non medical helper",
+      "assistive technology",
+      "accessible accommodation",
+      "special support grant",
+      "special support element",
+      "maintenance grant"
+    ]
+  }
+}

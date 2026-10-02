@@ -1,0 +1,9 @@
+flowchart TD
+    Clusters --> PersonTable{--person-tables supplied?}
+    PersonTable -->|No| DoneNoKnown([Done])
+    PersonTable -->|Yes| KnownLoad[Load known-person table]
+    KnownLoad --> MatchKnown[Match clusters, excluded linked evidence, and direct raw evidence]
+    MatchKnown --> KnownOutputs[Known-person outputs]
+    MatchKnown --> UnknownOutputs[Unknown-person outputs]
+    KnownOutputs --> Done([Done])
+    UnknownOutputs --> Done

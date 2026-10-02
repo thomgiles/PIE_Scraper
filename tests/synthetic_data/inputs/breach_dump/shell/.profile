@@ -1,0 +1,5 @@
+export DBEA_USER="Sam Green"
+export DBEA_EMAIL="sam.green@example.ac.uk"
+export STAFF_ID="STA8899001"
+export API_KEY="sample-profile-api-key"
+alias student_lookup="curl https://integration.example.invalid/student?email=jane.smith@example.ac.uk"

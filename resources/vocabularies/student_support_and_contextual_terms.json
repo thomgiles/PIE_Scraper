@@ -1,0 +1,87 @@
+{
+  "source_type": "curated_seed",
+  "groups": {
+    "care_leaver": {
+      "header_aliases": [
+        "care leaver",
+        "careleaver"
+      ],
+      "value_aliases": [
+        "yes",
+        "no",
+        "true",
+        "false",
+        "y",
+        "n"
+      ]
+    },
+    "household_income": {
+      "header_aliases": [
+        "household income",
+        "family income"
+      ]
+    },
+    "principal_earner_income": {
+      "header_aliases": [
+        "principal earner income",
+        "principle earner income"
+      ]
+    },
+    "dependants_adg_indicator": {
+      "header_aliases": [
+        "dependants adg indicator"
+      ],
+      "value_aliases": [
+        "yes",
+        "no",
+        "y",
+        "n",
+        "1",
+        "0"
+      ]
+    },
+    "dependants_ccg_indicator": {
+      "header_aliases": [
+        "dependants ccg indicator"
+      ],
+      "value_aliases": [
+        "yes",
+        "no",
+        "y",
+        "n",
+        "1",
+        "0"
+      ]
+    },
+    "number_of_sponsors": {
+      "header_aliases": [
+        "number of sponsors",
+        "sponsors"
+      ]
+    },
+    "maintenance_grant": {
+      "header_aliases": [
+        "maintenance grant"
+      ]
+    },
+    "special_support_element": {
+      "header_aliases": [
+        "special support element"
+      ]
+    },
+    "special_support_grant": {
+      "header_aliases": [
+        "special support grant"
+      ]
+    },
+    "contextual_participation": {
+      "header_aliases": [
+        "widening participation",
+        "widen part",
+        "underperforming school",
+        "elite athlete",
+        "extenuating circumstances"
+      ]
+    }
+  }
+}

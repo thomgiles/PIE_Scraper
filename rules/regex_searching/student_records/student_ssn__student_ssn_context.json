@@ -1,0 +1,17 @@
+{
+  "evidence_type": "Student SSN",
+  "pattern_name": "student_records_student_ssn_context",
+  "confidence": "high",
+  "regex": "\\b(?:student\\s*)?SSN\\b\\s*[:=#-]?\\s*(?P<value>\\d{3}-\\d{2}-\\d{4}|\\d{9})\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "line_triggers": [
+    "ssn"
+  ],
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 3,
+  "normalization": "compact_upper",
+  "is_identifiable": true,
+  "is_high_risk_standalone": true
+}

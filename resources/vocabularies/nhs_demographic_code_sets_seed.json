@@ -1,0 +1,99 @@
+{
+  "source_type": "curated_seed_with_official_target",
+  "source_urls": [
+    "https://www.datadictionary.nhs.uk/"
+  ],
+  "vocabularies": {
+    "marital_status": {
+      "header_aliases": [
+        "marital status",
+        "person marital status",
+        "relationship status",
+        "civil partnership status"
+      ],
+      "value_aliases": [
+        "single",
+        "married",
+        "civil partnership",
+        "separated",
+        "divorced",
+        "widowed",
+        "unknown",
+        "not known",
+        "not stated",
+        "not specified"
+      ]
+    },
+    "sex_gender": {
+      "header_aliases": [
+        "sex",
+        "gender",
+        "stated gender",
+        "administrative gender"
+      ],
+      "value_aliases": [
+        "male",
+        "female",
+        "other",
+        "indeterminate",
+        "not known",
+        "not specified",
+        "unknown"
+      ]
+    },
+    "ethnicity": {
+      "header_aliases": [
+        "ethnicity",
+        "ethnic category",
+        "ethnic group",
+        "ethnic code"
+      ],
+      "value_aliases": [
+        "white",
+        "asian or asian british",
+        "black, black british, caribbean or african",
+        "mixed or multiple ethnic groups",
+        "other ethnic group",
+        "not stated",
+        "not known",
+        "unknown"
+      ]
+    },
+    "religion": {
+      "header_aliases": [
+        "religion",
+        "religious belief",
+        "faith"
+      ],
+      "value_aliases": [
+        "no religion",
+        "christian",
+        "buddhist",
+        "hindu",
+        "jewish",
+        "muslim",
+        "sikh",
+        "any other religion",
+        "not stated",
+        "not known"
+      ]
+    },
+    "disability_status": {
+      "header_aliases": [
+        "disability",
+        "disability status",
+        "known disability",
+        "long term condition",
+        "impairment"
+      ],
+      "value_aliases": [
+        "yes",
+        "no",
+        "unknown",
+        "not known",
+        "not stated",
+        "no known disability"
+      ]
+    }
+  }
+}

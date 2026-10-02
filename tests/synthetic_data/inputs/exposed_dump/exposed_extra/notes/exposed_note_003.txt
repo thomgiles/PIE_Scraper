@@ -1,0 +1,6 @@
+Manual exposed-data review note
+person id: STA7654321
+full name: Alex Patel
+email: alex.patel@example.ac.uk
+date of birth: 2001-04-04
+phone: 07700900003

@@ -1,0 +1,28 @@
+{
+  "evidence_type": "DOB",
+  "pattern_name": "demographics_dob_context",
+  "confidence": "high",
+  "regex": "\\b(?:date\\s*of\\s*birth|birth\\s*date|dob)\\b\\s*[:=#-]?\\s*(?P<value>\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4})\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "context_guard": {
+    "required_tokens": [
+      "dob",
+      "birth",
+      "born"
+    ],
+    "required_phrases": [
+      "date of birth",
+      "birth date"
+    ]
+  },
+  "validator": "valid_contextual_date",
+  "line_triggers": [
+    "date of birth",
+    "birth date",
+    "dob"
+  ],
+  "risk_tier": "tier_2_sensitive_contextual",
+  "max_per_cluster": 3
+}

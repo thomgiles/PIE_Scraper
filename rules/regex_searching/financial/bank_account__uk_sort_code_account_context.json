@@ -1,0 +1,18 @@
+{
+  "evidence_type": "Bank Account",
+  "pattern_name": "financial_uk_sort_code_account_context",
+  "confidence": "high",
+  "regex": "\\b(?:sort\\s*code|bank\\s*sort)\\b\\s*[:=#-]?\\s*(?P<value>\\d{2}[- ]?\\d{2}[- ]?\\d{2}\\s*(?:/|,|and|\\s)\\s*(?:account(?:\\s*(?:number|no))?\\s*[:=#-]?)?\\s*\\d{8})\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "line_triggers": [
+    "sort code",
+    "bank sort"
+  ],
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 3,
+  "normalization": "compact_upper",
+  "is_identifiable": true,
+  "is_high_risk_standalone": true
+}

@@ -1,0 +1,18 @@
+{
+  "canonical_header": "NHS number",
+  "pattern_name": "identity_documents_nhs_number_column",
+  "evidence_type": "NHS Number",
+  "confidence": "high",
+  "risk_tier": "tier_1_strong_identifier",
+  "normalization": "compact_upper",
+  "validator": "valid_nhs_number",
+  "emit_cell_value": true,
+  "risk_roles": [
+    "id"
+  ],
+  "is_identifiable": true,
+  "is_high_risk_standalone": true,
+  "header_patterns": [
+    "\\bnhs\\s*(?:number|no|id)\\b"
+  ]
+}

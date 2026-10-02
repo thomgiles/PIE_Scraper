@@ -1,0 +1,11 @@
+{
+  "canonical_header": "postcode",
+  "pattern_name": "contact_location_postcode_column",
+  "header_patterns": [
+    "\\bpost\\s*code\\b",
+    "\\bpostcode\\b",
+    "\\bpostal\\s*code\\b",
+    "\\bhome\\s*post\\s*code\\b",
+    "\\bhome\\s*postcode\\b"
+  ]
+}

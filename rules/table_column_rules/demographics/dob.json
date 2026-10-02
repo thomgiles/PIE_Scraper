@@ -1,0 +1,29 @@
+{
+  "canonical_header": "DOB",
+  "pattern_name": "demographics_dob_column",
+  "header_patterns": [
+    "\\bdob\\b",
+    "\\bdate\\s*of\\s*birth\\b",
+    "\\bbirth\\s*date\\b"
+  ],
+  "evidence_type": "DOB",
+  "emit_cell_value": true,
+  "context_guard": {
+    "required_tokens": [
+      "dob",
+      "birth",
+      "born"
+    ],
+    "required_phrases": [
+      "date of birth",
+      "birth date"
+    ]
+  },
+  "confidence": "high",
+  "risk_tier": "tier_2_sensitive_contextual",
+  "normalization": "none",
+  "risk_roles": [
+    "dob"
+  ],
+  "validator": "valid_contextual_date"
+}

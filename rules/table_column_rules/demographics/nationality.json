@@ -1,0 +1,42 @@
+{
+  "canonical_header": "citizenship country",
+  "pattern_name": "demographics_citizenship_country_column",
+  "header_patterns": [
+    "\\bnationality\\b",
+    "\\bcitizenship\\b",
+    "\\bcountry\\s*of\\s*(?:nationality|citizenship|domicile)\\b",
+    "\\b(?:nationality|citizenship|domicile)\\s*country\\b",
+    "\\bdomicile\\b"
+  ],
+  "evidence_type": "Citizenship Country",
+  "emit_cell_value": true,
+  "context_guard": {
+    "required_tokens": [
+      "nationality",
+      "citizenship",
+      "domicile",
+      "citizen"
+    ],
+    "required_phrases": [
+      "country of nationality",
+      "country of citizenship",
+      "country of domicile"
+    ],
+    "forbidden_phrases": [
+      "country of birth",
+      "birth country",
+      "country of residence",
+      "residence country"
+    ],
+    "forbidden_tokens": [
+      "passport"
+    ]
+  },
+  "confidence": "high",
+  "risk_tier": "tier_2_sensitive_contextual",
+  "normalization": "country_name",
+  "validator": "valid_citizenship_country_value",
+  "risk_roles": [
+    "citizenship_country"
+  ]
+}

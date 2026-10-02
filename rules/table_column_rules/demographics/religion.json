@@ -1,0 +1,26 @@
+{
+  "canonical_header": "religion",
+  "pattern_name": "demographics_religion_column",
+  "header_patterns": [
+    "\\breligion\\b",
+    "\\breligious\\b",
+    "\\bfaith\\b"
+  ],
+  "evidence_type": "Religion",
+  "emit_cell_value": true,
+  "context_guard": {
+    "required_tokens": [
+      "religion",
+      "religious",
+      "faith",
+      "belief"
+    ]
+  },
+  "confidence": "high",
+  "risk_tier": "tier_2_sensitive_contextual",
+  "normalization": "none",
+  "validator": "valid_religion_value",
+  "risk_roles": [
+    "religion"
+  ]
+}

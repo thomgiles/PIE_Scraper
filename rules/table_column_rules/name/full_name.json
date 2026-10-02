@@ -1,0 +1,21 @@
+{
+  "canonical_header": "full name",
+  "pattern_name": "name_full_name_column",
+  "header_patterns": [
+    "^\\s*name\\s*$",
+    "\\bfull\\s*name\\b",
+    "\\bperson\\s*name\\b",
+    "\\bindividual\\s*name\\b",
+    "\\bapplicant\\s*name\\b",
+    "\\bcandidate\\s*name\\b",
+    "\\bstudent\\s*name\\b",
+    "\\bstaff\\s*name\\b",
+    "\\bemployee\\s*name\\b",
+    "\\bpatient\\s*name\\b",
+    "\\bparticipant\\s*name\\b",
+    "\\bpreferred\\s*name\\b",
+    "\\blegal\\s*name\\b",
+    "\\bmaiden\\s*name\\b",
+    "\\bbirth\\s*name\\b"
+  ]
+}

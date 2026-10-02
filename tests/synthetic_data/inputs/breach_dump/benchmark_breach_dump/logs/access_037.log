@@ -1,0 +1,55 @@
+2026-01-05T09:15:10Z INFO login username=stu1001850 email=jane.smith1850@example.ac.uk student id STU1001850 from 10.0.0.65
+case note full name: Jane Smith dob: 2000-03-15 disability: reasonable adjustment requested
+2026-01-05T09:15:10Z INFO login username=stu1001851 email=maria.gomez1851@example.ac.uk student id STU1001851 from 10.0.1.65
+2026-01-05T09:15:10Z INFO login username=stu1001852 email=li.wei1852@example.ac.uk student id STU1001852 from 10.0.2.65
+2026-01-05T09:15:10Z INFO login username=stu1001853 email=aisha.rahman1853@example.ac.uk student id STU1001853 from 10.0.3.65
+2026-01-05T09:15:10Z INFO login username=stu1001854 email=alex.patel1854@example.ac.uk student id STU1001854 from 10.0.4.65
+2026-01-05T09:15:10Z INFO login username=stu1001855 email=nora.khan1855@example.ac.uk student id STU1001855 from 10.0.5.65
+2026-01-05T09:15:10Z INFO login username=stu1001856 email=sam.green1856@example.ac.uk student id STU1001856 from 10.0.6.65
+2026-01-05T09:15:10Z INFO login username=stu1001857 email=robin.missing1857@example.ac.uk student id STU1001857 from 10.0.7.65
+2026-01-05T09:15:10Z INFO login username=stu1001858 email=ben.turner1858@example.ac.uk student id STU1001858 from 10.0.8.65
+2026-01-05T09:15:10Z INFO login username=stu1001859 email=priya.shah1859@example.ac.uk student id STU1001859 from 10.0.9.65
+2026-01-05T09:15:10Z INFO login username=stu1001860 email=jane.smith1860@example.ac.uk student id STU1001860 from 10.0.10.65
+case note full name: Jane Smith dob: 2002-01-25 disability: reasonable adjustment requested
+2026-01-05T09:15:10Z INFO login username=stu1001861 email=maria.gomez1861@example.ac.uk student id STU1001861 from 10.0.11.65
+2026-01-05T09:15:10Z INFO login username=stu1001862 email=li.wei1862@example.ac.uk student id STU1001862 from 10.0.12.65
+2026-01-05T09:15:10Z INFO login username=stu1001863 email=aisha.rahman1863@example.ac.uk student id STU1001863 from 10.0.13.65
+2026-01-05T09:15:10Z INFO login username=stu1001864 email=alex.patel1864@example.ac.uk student id STU1001864 from 10.0.14.65
+2026-01-05T09:15:10Z INFO login username=stu1001865 email=nora.khan1865@example.ac.uk student id STU1001865 from 10.0.15.65
+2026-01-05T09:15:10Z INFO login username=stu1001866 email=sam.green1866@example.ac.uk student id STU1001866 from 10.0.16.65
+2026-01-05T09:15:10Z INFO login username=stu1001867 email=robin.missing1867@example.ac.uk student id STU1001867 from 10.0.17.65
+2026-01-05T09:15:10Z INFO login username=stu1001868 email=ben.turner1868@example.ac.uk student id STU1001868 from 10.0.18.65
+2026-01-05T09:15:10Z INFO login username=stu1001869 email=priya.shah1869@example.ac.uk student id STU1001869 from 10.0.19.65
+2026-01-05T09:15:10Z INFO login username=stu1001870 email=jane.smith1870@example.ac.uk student id STU1001870 from 10.0.20.65
+case note full name: Jane Smith dob: 2004-11-08 disability: reasonable adjustment requested
+2026-01-05T09:15:10Z INFO login username=stu1001871 email=maria.gomez1871@example.ac.uk student id STU1001871 from 10.0.21.65
+2026-01-05T09:15:10Z INFO login username=stu1001872 email=li.wei1872@example.ac.uk student id STU1001872 from 10.0.22.65
+2026-01-05T09:15:10Z INFO login username=stu1001873 email=aisha.rahman1873@example.ac.uk student id STU1001873 from 10.0.23.65
+2026-01-05T09:15:10Z INFO login username=stu1001874 email=alex.patel1874@example.ac.uk student id STU1001874 from 10.0.24.65
+2026-01-05T09:15:10Z INFO login username=stu1001875 email=nora.khan1875@example.ac.uk student id STU1001875 from 10.0.25.65
+2026-01-05T09:15:10Z INFO login username=stu1001876 email=sam.green1876@example.ac.uk student id STU1001876 from 10.0.26.65
+2026-01-05T09:15:10Z INFO login username=stu1001877 email=robin.missing1877@example.ac.uk student id STU1001877 from 10.0.27.65
+2026-01-05T09:15:10Z INFO login username=stu1001878 email=ben.turner1878@example.ac.uk student id STU1001878 from 10.0.28.65
+2026-01-05T09:15:10Z INFO login username=stu1001879 email=priya.shah1879@example.ac.uk student id STU1001879 from 10.0.29.65
+2026-01-05T09:15:10Z INFO login username=stu1001880 email=jane.smith1880@example.ac.uk student id STU1001880 from 10.0.30.65
+case note full name: Jane Smith dob: 1998-09-18 disability: reasonable adjustment requested
+2026-01-05T09:15:10Z INFO login username=stu1001881 email=maria.gomez1881@example.ac.uk student id STU1001881 from 10.0.31.65
+2026-01-05T09:15:10Z INFO login username=stu1001882 email=li.wei1882@example.ac.uk student id STU1001882 from 10.0.32.65
+2026-01-05T09:15:10Z INFO login username=stu1001883 email=aisha.rahman1883@example.ac.uk student id STU1001883 from 10.0.33.65
+2026-01-05T09:15:10Z INFO login username=stu1001884 email=alex.patel1884@example.ac.uk student id STU1001884 from 10.0.34.65
+2026-01-05T09:15:10Z INFO login username=stu1001885 email=nora.khan1885@example.ac.uk student id STU1001885 from 10.0.35.65
+2026-01-05T09:15:10Z INFO login username=stu1001886 email=sam.green1886@example.ac.uk student id STU1001886 from 10.0.36.65
+2026-01-05T09:15:10Z INFO login username=stu1001887 email=robin.missing1887@example.ac.uk student id STU1001887 from 10.0.37.65
+2026-01-05T09:15:10Z INFO login username=stu1001888 email=ben.turner1888@example.ac.uk student id STU1001888 from 10.0.38.65
+2026-01-05T09:15:10Z INFO login username=stu1001889 email=priya.shah1889@example.ac.uk student id STU1001889 from 10.0.39.65
+2026-01-05T09:15:10Z INFO login username=stu1001890 email=jane.smith1890@example.ac.uk student id STU1001890 from 10.0.40.65
+case note full name: Jane Smith dob: 2000-07-01 disability: reasonable adjustment requested
+2026-01-05T09:15:10Z INFO login username=stu1001891 email=maria.gomez1891@example.ac.uk student id STU1001891 from 10.0.41.65
+2026-01-05T09:15:10Z INFO login username=stu1001892 email=li.wei1892@example.ac.uk student id STU1001892 from 10.0.42.65
+2026-01-05T09:15:10Z INFO login username=stu1001893 email=aisha.rahman1893@example.ac.uk student id STU1001893 from 10.0.43.65
+2026-01-05T09:15:10Z INFO login username=stu1001894 email=alex.patel1894@example.ac.uk student id STU1001894 from 10.0.44.65
+2026-01-05T09:15:10Z INFO login username=stu1001895 email=nora.khan1895@example.ac.uk student id STU1001895 from 10.0.45.65
+2026-01-05T09:15:10Z INFO login username=stu1001896 email=sam.green1896@example.ac.uk student id STU1001896 from 10.0.46.65
+2026-01-05T09:15:10Z INFO login username=stu1001897 email=robin.missing1897@example.ac.uk student id STU1001897 from 10.0.47.65
+2026-01-05T09:15:10Z INFO login username=stu1001898 email=ben.turner1898@example.ac.uk student id STU1001898 from 10.0.48.65
+2026-01-05T09:15:10Z INFO login username=stu1001899 email=priya.shah1899@example.ac.uk student id STU1001899 from 10.0.49.65

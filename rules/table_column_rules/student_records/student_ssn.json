@@ -1,0 +1,8 @@
+{
+  "canonical_header": "SSN",
+  "pattern_name": "student_records_student_ssn_column",
+  "header_patterns": [
+    "\\bssn\\b",
+    "\\bstudent\\s*support\\s*number\\b"
+  ]
+}

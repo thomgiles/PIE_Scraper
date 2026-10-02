@@ -1,0 +1,4 @@
+2026-01-03 INFO integration feed completed for Alex Patel username apatel
+2026-01-03 WARN api_key = abc123456789-redacted-example
+2026-01-03 DEBUG connector-nora endpoint returned staff_id STA4455667 for Nora Khan
+2026-01-03 ERROR token = sample-token-for-training-only user sam.green@example.ac.uk

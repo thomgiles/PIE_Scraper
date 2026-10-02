@@ -1,0 +1,71 @@
+{
+  "source_type": "curated_seed_with_official_target",
+  "source_urls": [
+    "https://www.hesa.ac.uk/collection"
+  ],
+  "vocabularies": {
+    "nationality_or_domicile": {
+      "header_aliases": [
+        "nationality",
+        "nationality country",
+        "country of nationality",
+        "citizenship",
+        "country of citizenship",
+        "domicile",
+        "domicile country",
+        "country of domicile"
+      ]
+    },
+    "ethnicity": {
+      "header_aliases": [
+        "ethnicity",
+        "ethnic group",
+        "ethnic category"
+      ]
+    },
+    "religion_or_belief": {
+      "header_aliases": [
+        "religion",
+        "religion or belief",
+        "faith"
+      ]
+    },
+    "disability": {
+      "header_aliases": [
+        "disability",
+        "disability status",
+        "impairment",
+        "specific learning difficulty",
+        "mental health condition",
+        "long standing illness",
+        "mobility impairment",
+        "hearing impairment",
+        "visual impairment"
+      ],
+      "value_aliases": [
+        "no known disability",
+        "specific learning difficulty",
+        "social or communication impairment",
+        "long standing illness or health condition",
+        "mental health condition",
+        "physical impairment or mobility issue",
+        "deaf or serious hearing impairment",
+        "blind or serious visual impairment",
+        "other disability, impairment or medical condition",
+        "two or more impairments and disabling medical conditions",
+        "information refused",
+        "information not known"
+      ]
+    },
+    "care_and_contextual_status": {
+      "header_aliases": [
+        "care leaver",
+        "care experienced",
+        "estranged",
+        "young carer",
+        "free school meals",
+        "widening participation"
+      ]
+    }
+  }
+}

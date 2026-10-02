@@ -1,0 +1,17 @@
+{
+  "canonical_header": "person id",
+  "pattern_name": "identity_documents_person_id_column",
+  "header_patterns": [
+    "^\\s*id\\s*$",
+    "\\bperson\\s*(?:id|number|no)\\b",
+    "\\bpers\\s*id\\b",
+    "\\bidentifier\\b",
+    "\\bcandidate\\s*(?:id|number|no)\\b",
+    "\\bapplicant\\s*(?:id|number|no)\\b",
+    "\\bapplication\\s*(?:number|nbr|no)\\b",
+    "\\bappl\\s*(?:number|nbr|no)\\b",
+    "\\badm\\s*appl\\s*(?:number|nbr|no)\\b",
+    "\\bempl\\s*id\\b",
+    "\\bemplid\\b"
+  ]
+}

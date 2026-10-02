@@ -1,0 +1,8 @@
+{
+  "canonical_header": "driving licence",
+  "pattern_name": "identity_documents_driving_licence_column",
+  "header_patterns": [
+    "\\bdriving\\s*licen[cs]e\\b",
+    "\\bdriver\\s*licen[cs]e\\b"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "source_type": "curated_seed",
+  "canonical_values": {
+    "Single": [
+      "single",
+      "never married",
+      "not married",
+      "unmarried"
+    ],
+    "Married": [
+      "married"
+    ],
+    "Civil partnership": [
+      "civil partnership",
+      "civil partner",
+      "in a civil partnership"
+    ],
+    "Separated": [
+      "separated",
+      "married but separated",
+      "civil partnership separated"
+    ],
+    "Divorced": [
+      "divorced"
+    ],
+    "Widowed": [
+      "widowed",
+      "surviving civil partner"
+    ],
+    "Living with partner": [
+      "cohabiting",
+      "living with partner",
+      "partnered",
+      "living as married"
+    ],
+    "Prefer not to say": [
+      "prefer not to say",
+      "unknown",
+      "not known",
+      "not provided",
+      "not stated"
+    ]
+  },
+  "header_aliases": [
+    "marital status",
+    "maritalstatus",
+    "relationship status",
+    "civil partnership status"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "canonical_header": "household income",
+  "pattern_name": "student_support_household_income_column",
+  "header_patterns": [
+    "\\bhousehold\\s*income\\b"
+  ],
+  "emit_cell_value": true,
+  "evidence_type": "Household Income",
+  "validator": "valid_positive_amount_value",
+  "risk_tier": "tier_3_supporting_evidence"
+}

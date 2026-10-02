@@ -1,0 +1,33 @@
+{
+  "strong_anchor_types": [
+    "Email"
+  ],
+  "compound_anchor_sets": [
+    ["Email", "Name", "Address"],
+    ["Email", "Name", "Passport"],
+    ["Email", "Name", "Driving Licence"],
+    ["Email", "Saturn ID"],
+    ["Email", "Phone"],
+    ["Email", "National Insurance Number"],
+    ["Email", "NHS Number"],
+    ["Phone", "Name"],
+    ["Name", "Address"],
+    ["Name", "NHS Number"],
+    ["Name", "HUSID"],
+    ["Name", "CAS Number"],
+    ["Name", "Saturn ID"],
+    ["Name", "DOB", "Address"]
+  ],
+  "anchor_priority": {
+    "Email": 10,
+    "Institutional Email": 10,
+    "Personal Email": 10,
+    "Phone": 20,
+    "National Insurance Number": 30,
+    "NHS Number": 40,
+    "Saturn ID": 45,
+    "Passport": 50,
+    "Driving Licence": 60,
+    "Name": 70
+  }
+}

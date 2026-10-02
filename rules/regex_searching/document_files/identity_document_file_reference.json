@@ -1,0 +1,16 @@
+{
+  "evidence_type": "Identity Document File",
+  "pattern_name": "documents_identity_document_file_reference",
+  "confidence": "medium",
+  "regex": "[:=]\\s*(?P<value>[^|\\r\\n]*(?:passport|travel\\s*document|visa|\\bbrp\\b|biometric\\s*residence\\s*permit|residence\\s*permit|national\\s*id|identity\\s*card|id\\s*card|driv(?:ing|er)\\s*licen[cs]e|birth\\s*certificate)[^|\\r\\n]*)",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "labelled_fields_only": true,
+  "risk_tier": "tier_3_supporting_evidence",
+  "normalization": "lower",
+  "validator": "valid_identity_document_file_reference",
+  "risk_roles": [
+    "identity_document_file"
+  ]
+}

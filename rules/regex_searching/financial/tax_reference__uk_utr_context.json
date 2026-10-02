@@ -1,0 +1,17 @@
+{
+  "evidence_type": "Tax Reference",
+  "pattern_name": "financial_uk_utr_context",
+  "confidence": "high",
+  "regex": "\\b(?:UTR|unique\\s*taxpayer\\s*reference)\\b\\s*[:=#-]?\\s*(?P<value>\\d{10})\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "line_triggers": [
+    "utr",
+    "unique taxpayer reference"
+  ],
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 3,
+  "normalization": "compact_upper",
+  "is_identifiable": true
+}

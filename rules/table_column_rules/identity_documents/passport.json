@@ -1,0 +1,11 @@
+{
+  "canonical_header": "passport",
+  "pattern_name": "identity_documents_passport_column",
+  "header_patterns": [
+    "^\\s*passport\\s*$",
+    "\\bpassport\\s*(?:number|no|nbr)\\b",
+    "\\bpassport(?:ortravel)?document(?:number|no|nbr)?\\b",
+    "\\bpassport.*(?:number|no|nbr)\\b",
+    "\\btravel\\s*document\\s*(?:number|no|nbr)\\b"
+  ]
+}

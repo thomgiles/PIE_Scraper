@@ -1,0 +1,8 @@
+{
+  "canonical_header": "UTR",
+  "pattern_name": "identity_documents_utr_column",
+  "header_patterns": [
+    "\\butr\\b",
+    "\\btax\\s*reference\\b"
+  ]
+}

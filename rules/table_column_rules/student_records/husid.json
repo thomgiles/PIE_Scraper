@@ -1,0 +1,7 @@
+{
+  "canonical_header": "HUSID",
+  "pattern_name": "student_records_husid_column",
+  "header_patterns": [
+    "\\bhusid\\b"
+  ]
+}

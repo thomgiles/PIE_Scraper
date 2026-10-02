@@ -1,0 +1,15 @@
+{
+  "evidence_type": "National Insurance Number",
+  "pattern_name": "identity_documents_uk_national_insurance_number",
+  "confidence": "high",
+  "regex": "\\b(?!BG)(?!GB)(?!KN)(?!NK)(?!NT)(?!TN)(?!ZZ)[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z]\\s?\\d{2}\\s?\\d{2}\\s?\\d{2}\\s?[A-D]\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "risk_tier": "tier_1_strong_identifier",
+  "validator": "valid_uk_national_insurance_number",
+  "max_per_cluster": 3,
+  "normalization": "compact_upper",
+  "is_identifiable": true,
+  "is_high_risk_standalone": true
+}

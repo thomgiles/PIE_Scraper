@@ -1,0 +1,4 @@
+staff_id,email,name,employee_id,payroll,employment,health
+STA7654321,alex.patel@example.ac.uk,Alex Patel,HR-998,Monthly,Active,
+STA4455667,nora.khan@example.ac.uk,Nora Khan,HR-445,Monthly,Active,
+STA8899001,sam.green@example.ac.uk,Sam Green,SGREEN-LEGACY,Monthly,Active,occupational health adjustment

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ukviExport>
+  <student>
+    <personId>3344556</personId>
+    <name>Li Wei</name>
+    <email>li.wei@example.ac.uk</email>
+    <studentId>STU3344556</studentId>
+    <visa>Student visa</visa>
+    <brp>BRP-LW-002</brp>
+    <cas>CAS-LW-556</cas>
+    <nationality>Chinese</nationality>
+  </student>
+  <student>
+    <personId>6677889</personId>
+    <name>Priya Shah</name>
+    <email>priya.shah@example.ac.uk</email>
+    <studentId>STU6677889</studentId>
+    <visa>Student visa</visa>
+    <cas>CAS-PS-889</cas>
+  </student>
+</ukviExport>

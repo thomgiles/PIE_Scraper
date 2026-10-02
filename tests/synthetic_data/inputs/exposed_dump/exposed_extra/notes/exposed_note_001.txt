@@ -1,0 +1,6 @@
+Manual exposed-data review note
+person id: STA4455667
+full name: Nora Khan
+email: nora.khan@example.ac.uk
+date of birth: 1999-02-02
+phone: 07700900001

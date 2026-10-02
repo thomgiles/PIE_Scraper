@@ -1,0 +1,8 @@
+{
+  "canonical_header": "sort code",
+  "pattern_name": "financial_sort_code_column",
+  "header_patterns": [
+    "\\bsort\\s*code\\b",
+    "\\bbank\\s*sort\\b"
+  ]
+}

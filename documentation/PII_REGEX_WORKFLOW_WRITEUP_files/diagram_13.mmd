@@ -1,0 +1,9 @@
+flowchart TD
+    HeaderMatchers --> PersonTable[Person-table anchor extraction]
+    RegexPatterns --> PersonTable
+    PersonTable --> KnownMatch[Known-person matching]
+    Evidence --> KnownMatch
+    PersonClusters --> KnownMatch
+    Linked --> KnownMatch
+    KnownMatch --> KnownOutputs[6.Reidentification/<person-list-stem>_in_dataset + risk matrices + not-in-dataset]
+    KnownMatch --> UnknownOutputs[6.Reidentification/clusters_not_in_list + redacted + risk matrix]

@@ -1,0 +1,97 @@
+{
+  "source_type": "curated_seed",
+  "notes": [
+    "Extended value and code-style aliases commonly seen in UK public-sector and education exports.",
+    "Use for inference support, not as a normative coding standard."
+  ],
+  "ethnicity": {
+    "broad_groups": [
+      "white",
+      "mixed or multiple ethnic groups",
+      "asian or asian british",
+      "black, black british, caribbean or african",
+      "other ethnic group"
+    ],
+    "value_aliases": [
+      "british",
+      "irish",
+      "gypsy or irish traveller",
+      "roma",
+      "white and black caribbean",
+      "white and black african",
+      "white and asian",
+      "indian",
+      "pakistani",
+      "bangladeshi",
+      "chinese",
+      "caribbean",
+      "african",
+      "arab",
+      "any other white background",
+      "any other mixed or multiple ethnic background",
+      "any other asian background",
+      "any other black background",
+      "any other ethnic group",
+      "not stated",
+      "prefer not to say",
+      "unknown"
+    ],
+    "code_aliases": [
+      "w1",
+      "w2",
+      "w3",
+      "w9",
+      "m1",
+      "m2",
+      "m3",
+      "m9",
+      "a1",
+      "a2",
+      "a3",
+      "a4",
+      "a9",
+      "b1",
+      "b2",
+      "b9",
+      "o2",
+      "o9",
+      "ns"
+    ]
+  },
+  "religion": {
+    "value_aliases": [
+      "no religion",
+      "christian",
+      "roman catholic",
+      "catholic",
+      "church of england",
+      "anglican",
+      "buddhist",
+      "hindu",
+      "jewish",
+      "muslim",
+      "sikh",
+      "spiritual",
+      "any other religion",
+      "atheist",
+      "agnostic",
+      "not stated",
+      "prefer not to say",
+      "unknown"
+    ]
+  },
+  "marital_status": {
+    "value_aliases": [
+      "single",
+      "married",
+      "civil partnership",
+      "separated",
+      "divorced",
+      "widowed",
+      "cohabiting",
+      "living with partner",
+      "prefer not to say",
+      "unknown"
+    ]
+  }
+}

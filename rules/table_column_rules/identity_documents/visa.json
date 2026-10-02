@@ -1,0 +1,7 @@
+{
+  "canonical_header": "visa",
+  "pattern_name": "identity_documents_visa_column",
+  "header_patterns": [
+    "\\bvisa\\b"
+  ]
+}

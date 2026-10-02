@@ -1,0 +1,5 @@
+ID,First Name,Last Name,UoN email,Other Email,DOB,Phone,Passport Number,Case Note
+EXT9001002,Omar,Reed,omar.reed.external@example.ac.uk,,2001-04-04,07700900012,P700000012,exposed review record
+EXT9001003,Grace,Hill,,grace.hill.external@example.ac.uk,2002-05-05,07700900013,P700000013,exposed review record
+EXT9001004,Theo,Cole,theo.cole.external@example.ac.uk,,2003-06-06,07700900014,P700000014,exposed review record
+EXT9001005,Iris,Lane,,iris.lane.external@example.ac.uk,2004-07-07,07700900015,P700000015,exposed review record

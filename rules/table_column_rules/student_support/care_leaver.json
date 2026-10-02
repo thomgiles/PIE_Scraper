@@ -1,0 +1,11 @@
+{
+  "canonical_header": "care leaver",
+  "pattern_name": "student_support_care_leaver_column",
+  "header_patterns": [
+    "\\bcare\\s*leaver\\b"
+  ],
+  "emit_cell_value": true,
+  "evidence_type": "Care Leaver",
+  "validator": "valid_positive_indicator_value",
+  "risk_tier": "tier_3_supporting_evidence"
+}

@@ -1,0 +1,8 @@
+{
+  "canonical_header": "payment method",
+  "pattern_name": "financial_payment_method_column",
+  "header_patterns": [
+    "\\bpayment\\s*method\\b",
+    "\\bdirect\\s*debit\\b"
+  ]
+}

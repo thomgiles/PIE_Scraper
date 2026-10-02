@@ -1,0 +1,23 @@
+{
+  "canonical_header": "phone",
+  "pattern_name": "contact_location_phone_column",
+  "context_guard": {
+    "required_tokens": ["phone", "telephone", "mobile", "tel", "contact"],
+    "forbidden_tokens": ["type", "status", "source", "category"]
+  },
+  "header_patterns": [
+    "\\bphone\\b",
+    "\\btelephone\\b",
+    "\\bmobile\\b",
+    "\\bphone\\s*(?:number|no)\\b",
+    "\\btelephone\\s*(?:number|no)\\b",
+    "\\bmobile\\s*(?:number|no)\\b",
+    "\\bmobile\\s*phone\\b",
+    "\\bmobile\\s*phone\\s*(?:number|no)\\b",
+    "\\buser\\s*contact\\b",
+    "\\bcontact\\s*(?:number|no)\\b",
+    "\\bhome\\s*telephone\\s*(?:number|no)?\\b",
+    "\\bhome\\s*mobile\\s*(?:number|no)?\\b",
+    "\\bemergency\\s*mobile\\s*phone\\b"
+  ]
+}

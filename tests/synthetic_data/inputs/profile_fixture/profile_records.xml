@@ -1,0 +1,8 @@
+<records>
+  <record><mailbox>xml.one@example.org</mailbox><birth_when>2001-04-01</birth_when><status_flag>active</status_flag><external_ref>700001</external_ref></record>
+  <record><mailbox>xml.two@example.org</mailbox><birth_when>2001-04-02</birth_when><status_flag>inactive</status_flag><external_ref>700002</external_ref></record>
+  <record><mailbox>xml.three@example.org</mailbox><birth_when>2001-04-03</birth_when><status_flag>active</status_flag><external_ref>700003</external_ref></record>
+  <record><mailbox>xml.four@example.org</mailbox><birth_when>2001-04-04</birth_when><status_flag>inactive</status_flag><external_ref>700004</external_ref></record>
+  <record><mailbox>xml.five@example.org</mailbox><birth_when>2001-04-05</birth_when><status_flag>active</status_flag><external_ref>700005</external_ref></record>
+  <record><mailbox>xml.six@example.org</mailbox><birth_when>2001-04-06</birth_when><status_flag>inactive</status_flag><external_ref>700006</external_ref></record>
+</records>

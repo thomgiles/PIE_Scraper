@@ -1,0 +1,10 @@
+{
+  "canonical_header": "username",
+  "pattern_name": "contact_location_username_column",
+  "header_patterns": [
+    "\\busername\\b",
+    "\\buser\\s*name\\b",
+    "\\blogin\\s*name\\b",
+    "\\bscreen\\s*name\\b"
+  ]
+}

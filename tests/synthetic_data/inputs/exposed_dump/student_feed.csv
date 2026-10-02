@@ -1,0 +1,5 @@
+student_id,email,name,date of birth,course,passport_number,cas
+STU1234567,jane.smith@example.ac.uk,Jane Smith,1999-04-12,MSc Example,P123456789,CAS-ABC-123
+STU2233445,maria.gomez@example.ac.uk,Maria Gomez,2001-08-21,MSc Finance,P223344500,CAS-MG-445
+STU3344556,li.wei@example.ac.uk,Li Wei,2000-02-14,MSc Engineering,P334455600,CAS-LW-556
+STU9900112,aisha.rahman@example.ac.uk,Aisha Rahman,2002-01-18,MSc Data Science,P990011200,CAS-AR-112

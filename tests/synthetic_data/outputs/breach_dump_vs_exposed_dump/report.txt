@@ -1,0 +1,98 @@
+PII Regex Output Comparison
+===========================
+
+Left dataset:  breach_dump
+Left folder:   /Users/tomgiles/Library/CloudStorage/OneDrive-TheUniversityofNottingham/Digital_Research/Source_Control/CTI-Scripts/PiiScraper/tests/synthetic_data/outputs/breach_dump
+Right dataset: exposed_dump
+Right folder:  /Users/tomgiles/Library/CloudStorage/OneDrive-TheUniversityofNottingham/Digital_Research/Source_Control/CTI-Scripts/PiiScraper/tests/synthetic_data/outputs/exposed_dump
+Person table:  /Users/tomgiles/Library/CloudStorage/OneDrive-TheUniversityofNottingham/Digital_Research/Source_Control/CTI-Scripts/PiiScraper/tests/synthetic_data/inputs/synthetic_slim_contacts.csv
+Workers:       1
+
+Definitions
+-----------
+Evidence conservation compares evidence terms (evidence_type=normalized_value) and ignores file path, row number, and source context.
+Large evidence terms are compared using stable 128-bit digests to reduce RAM use; counts/overlap are unaffected for practical purposes.
+Cluster conservation compares configured cluster merge terms where present, falling back to anchor/evidence values for singleton-like clusters.
+Known-person comparison uses person_key column values derived from the supplied person table, with an exact ID column treated as the primary identifier.
+Unknown-person comparison prefers identity terms from unknown_person_in_dataset_clusters.csv. When only the non-disclosive unknown_person_in_dataset.csv exists, rows are resolved to person_clusters.csv by person_cluster_id.
+
+Evidence Term Conservation
+--------------------------
+breach_dump unique terms: 0
+exposed_dump unique terms: 0
+Shared terms: 0
+breach_dump-only terms: 0
+exposed_dump-only terms: 0
+breach_dump conserved in exposed_dump: n/a
+exposed_dump conserved in breach_dump: n/a
+Jaccard overlap: n/a
+
+breach_dump atomic evidence rows scanned into comparison: 0
+exposed_dump atomic evidence rows scanned into comparison: 0
+
+Evidence Conservation By Type
+-----------------------------
+evidence_type                        breach_dump exposed_dump       shared breach_dump conserved exposed_dump conserved
+
+Person Cluster Conservation
+---------------------------
+breach_dump cluster rows: 0
+exposed_dump cluster rows: 0
+breach_dump clusters with at least one identity term seen in exposed_dump: 0 (n/a)
+exposed_dump clusters with at least one identity term seen in breach_dump: 0 (n/a)
+
+Person Cluster Identity Term Conservation
+-----------------------------------------
+breach_dump unique terms: 0
+exposed_dump unique terms: 0
+Shared terms: 0
+breach_dump-only terms: 0
+exposed_dump-only terms: 0
+breach_dump conserved in exposed_dump: n/a
+exposed_dump conserved in breach_dump: n/a
+Jaccard overlap: n/a
+
+Known Person Matrix
+-------------------
+Person-table universe: 11
+
+                        exposed_dump in exposed_dump out
+breach_dump in                        0                0
+breach_dump out                       0               11
+
+Both in: 0.00%
+breach_dump only: 0.00%
+exposed_dump only: 0.00%
+Both out: 100.00%
+
+Known Person Group Counts
+-------------------------
+group                                    count  person table % detail_file
+Known in both datasets                       0           0.00% known_in_both_datasets.csv
+Known only in breach_dump                    0           0.00% known_only_in_breach_dump.csv
+Known only in exposed_dump                   0           0.00% known_only_in_exposed_dump.csv
+Known in neither dataset                    11         100.00% known_in_neither_dataset.csv
+
+Unknown Person Comparison
+-------------------------
+breach_dump unknown rows: 0
+exposed_dump unknown rows: 0
+breach_dump unknown source: unknown_person_in_dataset_clusters.csv
+exposed_dump unknown source: unknown_person_in_dataset_clusters.csv
+breach_dump unknown rows resolved through person_clusters.csv: 0
+exposed_dump unknown rows resolved through person_clusters.csv: 0
+breach_dump unknown rows without comparable identity terms: 0
+exposed_dump unknown rows without comparable identity terms: 0
+breach_dump unknown rows with at least one signature term seen in exposed_dump: 0 (n/a)
+exposed_dump unknown rows with at least one signature term seen in breach_dump: 0 (n/a)
+
+Unknown Person Signature Term Conservation
+------------------------------------------
+breach_dump unique terms: 0
+exposed_dump unique terms: 0
+Shared terms: 0
+breach_dump-only terms: 0
+exposed_dump-only terms: 0
+breach_dump conserved in exposed_dump: n/a
+exposed_dump conserved in breach_dump: n/a
+Jaccard overlap: n/a

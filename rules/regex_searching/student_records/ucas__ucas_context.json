@@ -1,0 +1,22 @@
+{
+  "evidence_type": "UCAS Personal ID",
+  "pattern_name": "student_records_ucas_personal_id_context",
+  "confidence": "high",
+  "regex": "\\b(?:UCAS\\s*(?:personal\\s*)?(?:id|identifier|number|no)|UCASPERID)\\b\\s*[:=#-]?\\s*(?P<value>[12][0-9]{2}[-\\s]?[0-9]{3}[-\\s]?[0-9]{4})\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "line_triggers": [
+    "ucas",
+    "ucasperid"
+  ],
+  "validator": "valid_ucas_personal_id",
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 2,
+  "normalization": "compact_upper",
+  "is_identifiable": true,
+  "is_high_risk_standalone": true,
+  "risk_roles": [
+    "id"
+  ]
+}

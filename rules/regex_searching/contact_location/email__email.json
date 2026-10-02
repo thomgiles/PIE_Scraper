@@ -1,0 +1,17 @@
+{
+  "evidence_type": "Email",
+  "pattern_name": "contact_location_email",
+  "confidence": "high",
+  "regex": "\\b[A-Z0-9._%+\\-]+@[A-Z0-9.\\-]+\\.[A-Z]{2,}\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 5,
+  "max_per_cluster_by_evidence_type": {
+    "Institutional Email": 3,
+    "Personal Email": 5
+  },
+  "normalization": "lower",
+  "is_identifiable": true
+}

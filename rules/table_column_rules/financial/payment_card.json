@@ -1,0 +1,11 @@
+{
+  "canonical_header": "payment card",
+  "pattern_name": "financial_payment_card_column",
+  "header_patterns": [
+    "^\\s*payment\\s*card\\s*$",
+    "^\\s*credit\\s*card\\s*$",
+    "\\bcard\\s*(?:number|no)\\b",
+    "\\bcredit\\s*card\\s*(?:number|no)\\b",
+    "\\bcredit\\s*card\\s*last\\s*(?:four|4)\\b"
+  ]
+}

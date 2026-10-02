@@ -1,0 +1,10 @@
+flowchart TD
+    Headers[Source headers] --> HeaderRules[table_column_rules/**/*.json]
+    HeaderRules --> Canonical[Resolve canonical headers]
+    Rows[Table rows] --> Label[Build label:value text]
+    Canonical --> Label
+    Label --> CompositeName{First + last name metadata?}
+    CompositeName -->|yes| AddFullName[Append full name: First Last]
+    CompositeName -->|no| NoFullName[No composite name added]
+    AddFullName --> Regex[Regex scanner]
+    NoFullName --> Regex

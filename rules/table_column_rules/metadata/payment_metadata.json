@@ -1,0 +1,19 @@
+{
+  "canonical_header": "payment metadata",
+  "pattern_name": "metadata_payment_column",
+  "header_patterns": [
+    "^\\s*credit\\s*card\\s*(?:bank|country|type)\\s*$",
+    "^\\s*creditcard(?:bank|country|type)\\s*$",
+    "^\\s*payment\\s*card\\s*(?:bank|country|type)\\s*$",
+    "^\\s*payment\\s*(?:short\\s*)?name\\s*$",
+    "^\\s*payment\\s*short\\s*name\\s*$",
+    "^\\s*paymentshortname\\s*$",
+    "^\\s*payment\\s*status\\s*$",
+    "^\\s*payment\\s*source\\s*$",
+    "^\\s*payment\\s*category\\s*$",
+    "^\\s*prod\\s*desc\\s*$",
+    "^\\s*proddesc\\s*$",
+    "^\\s*cur(?:rency)?\\s*$",
+    "^\\s*amount\\s*$"
+  ]
+}

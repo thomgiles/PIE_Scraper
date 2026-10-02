@@ -1,0 +1,5 @@
+{"student_id": "EXT9001003", "full_name": "Grace Hill", "email": "grace.hill.external@example.ac.uk", "dob": "2000-03-03", "phone": "07700900010", "passport_number": "P700000010", "case_status": "exposed_dataset_supplement"}
+{"student_id": "EXT9001004", "full_name": "Theo Cole", "email": "theo.cole.external@example.ac.uk", "dob": "2001-04-04", "phone": "07700900011", "passport_number": "P700000011", "case_status": "exposed_dataset_supplement"}
+{"student_id": "EXT9001005", "full_name": "Iris Lane", "email": "iris.lane.external@example.ac.uk", "dob": "2002-05-05", "phone": "07700900012", "passport_number": "P700000012", "case_status": "exposed_dataset_supplement"}
+{"student_id": "STA4455667", "full_name": "Nora Khan", "email": "nora.khan@example.ac.uk", "dob": "2003-06-06", "phone": "07700900013", "passport_number": "P700000013", "case_status": "exposed_dataset_supplement"}
+{"student_id": "STA5566778", "full_name": "Ben Turner", "email": "ben.turner@example.ac.uk", "dob": "2004-07-07", "phone": "07700900014", "passport_number": "P700000014", "case_status": "exposed_dataset_supplement"}

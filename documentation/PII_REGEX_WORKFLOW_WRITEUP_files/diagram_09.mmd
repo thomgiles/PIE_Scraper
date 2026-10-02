@@ -1,0 +1,9 @@
+flowchart TD
+    Linked[4.Regex_Scanning/linked_evidence.csv] --> Eligible{cluster_eligible yes?}
+    Eligible -->|no| Excluded[Keep for known-person matching only]
+    Eligible -->|yes| EvidenceMap[Parse evidence_values]
+    EvidenceMap --> Strong[Build strong keys]
+    EvidenceMap --> Compound[Build compound keys]
+    Strong --> Union[Union linked rows sharing keys]
+    Compound --> Union
+    Union --> Clusters[Write 5.Clustering/clusters.csv]

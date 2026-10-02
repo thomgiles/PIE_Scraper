@@ -1,0 +1,9 @@
+{
+  "canonical_header": "middle name",
+  "pattern_name": "name_middle_name_column",
+  "header_patterns": [
+    "\\bmiddle\\s*name\\b",
+    "\\bmiddle\\s*names\\b",
+    "\\bmiddlename\\b"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "canonical_header": "document metadata",
+  "pattern_name": "metadata_document_column",
+  "pattern_names": [
+    "documents_identity_document_file_reference"
+  ],
+  "header_patterns": [
+    "^\\s*documents?\\s*(?:name|source|status|label|type)\\s*$",
+    "^\\s*documents?\\s*label\\s*descr\\s*$",
+    "^\\s*documnet\\s*(?:label|type)\\s*$",
+    "^\\s*document_name\\s*$",
+    "^\\s*document_source\\s*$",
+    "^\\s*document_status\\s*$",
+    "^\\s*document_label\\s*$",
+    "^\\s*document_label_descr\\s*$",
+    "^\\s*document_type\\s*$",
+    "^\\s*documnet_label\\s*$",
+    "^\\s*documnet_type\\s*$"
+  ]
+}

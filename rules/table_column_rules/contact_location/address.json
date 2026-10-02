@@ -1,0 +1,17 @@
+{
+  "canonical_header": "address",
+  "pattern_name": "contact_location_address_column",
+  "header_patterns": [
+    "\\baddress\\s*(?:line\\s*)?\\d*\\b",
+    "\\baddr\\s*\\d*\\b",
+    "\\bstreet\\b",
+    "\\broad\\b",
+    "\\bavenue\\b",
+    "\\bhome\\s*address\\b",
+    "\\bcorrespondence\\s*address\\b",
+    "\\bpostal\\s*address\\b",
+    "\\baddress\\s*1\\b",
+    "\\baddress\\s*2\\b",
+    "\\baddress\\s*3\\b"
+  ]
+}

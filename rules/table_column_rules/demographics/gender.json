@@ -1,0 +1,22 @@
+{
+  "canonical_header": "gender/sex",
+  "pattern_name": "demographics_gender_sex_column",
+  "header_patterns": [
+    "\\bgender\\b",
+    "\\bsex\\b"
+  ],
+  "evidence_type": "Gender/Sex",
+  "emit_cell_value": true,
+  "context_guard": {
+    "required_tokens": [
+      "gender",
+      "sex"
+    ]
+  },
+  "confidence": "high",
+  "risk_tier": "tier_2_sensitive_contextual",
+  "normalization": "none",
+  "risk_roles": [
+    "gender_sex"
+  ]
+}

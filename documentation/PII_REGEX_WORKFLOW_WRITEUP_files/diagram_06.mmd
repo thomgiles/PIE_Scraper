@@ -1,0 +1,18 @@
+flowchart TD
+    File[File path] --> Sniff[Detect content signature]
+    Sniff --> Route{Detected extension}
+    Route -->|json/jsonl/xml/yaml/yml| Structured{Structured records enabled?}
+    Structured -->|yes| StructuredParse[Parse hierarchy and infer record boundaries]
+    StructuredParse -->|records found| RecordLines[Labelled structured record lines]
+    StructuredParse -->|parse failure or no record| TextLike[Text or markup fallback]
+    Structured -->|no| TextLike
+    Route -->|txt/log/config/etc.| TextLike
+    Route -->|csv/tsv| Delimited[Delimited table extractor]
+    Route -->|xlsx/xlsm/xls/xlsb/ods| Excel[Spreadsheet readers and fallbacks]
+    Route -->|docx| Docx[python-docx]
+    Route -->|pdf| Pdf[pypdf embedded text]
+    Route -->|rtf| Rtf[striprtf]
+    Route -->|eml/msg| Email[Email parser]
+    Route -->|image| Image{--scan-images TRUE?}
+    Image -->|yes| OCR[pytesseract OCR]
+    Image -->|no| NoOCR[ocr_disabled]

@@ -1,0 +1,21 @@
+{
+  "canonical_header": "email",
+  "pattern_name": "contact_location_email_column",
+  "context_guard": {
+    "required_tokens": ["email", "mail"],
+    "forbidden_tokens": ["type", "status", "source", "category"]
+  },
+  "header_patterns": [
+    "\\be-?mails?\\b",
+    "\\bmail\\b",
+    "\\bnotify\\s*e-?mail\\b",
+    "\\bregistered\\s*e-?mail\\b",
+    "\\bemail\\s*(?:id|identifier)\\b",
+    "\\buon\\s*e-?mails?\\b",
+    "\\bother\\s*e-?mails?\\b",
+    "\\bprimary\\s*e-?mails?\\b",
+    "\\binstitutional\\s*e-?mails?\\b",
+    "\\bpersonal\\s*e-?mails?\\b",
+    "\\bcontact\\s*e-?mail\\b"
+  ]
+}

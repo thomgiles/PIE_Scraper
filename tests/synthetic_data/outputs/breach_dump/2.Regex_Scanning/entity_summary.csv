@@ -1,0 +1,11 @@
+evidence_type,finding_count,file_count
+Address,2,1
+Citizenship Country,1,1
+DOB,12456,219
+IP Address,4000,80
+Identity Document File,92,92
+Institutional Email,16764,287
+Known Person Identifier: person id,38,31
+Name,21839,168
+Passport,11476,144
+Phone,11401,72

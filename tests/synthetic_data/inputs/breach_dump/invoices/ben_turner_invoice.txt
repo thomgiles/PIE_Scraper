@@ -1,0 +1,6 @@
+Invoice INV-778
+Purchase order PO-778
+Ben Turner
+Email: ben.turner@example.ac.uk
+Staff ID: STA5566778
+Payment bank details were included in the invoice approval note.

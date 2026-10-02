@@ -1,0 +1,18 @@
+{
+  "evidence_type": "NHS Number",
+  "pattern_name": "identity_documents_nhs_number",
+  "confidence": "high",
+  "regex": "\\bNHS(?:\\s*(?:number|no|id))?\\b\\s*[:=#-]?\\s*(?P<value>\\d{3}[ -]?\\d{3}[ -]?\\d{4})\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "validator": "valid_nhs_number",
+  "line_triggers": [
+    "nhs"
+  ],
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 3,
+  "normalization": "compact_upper",
+  "is_identifiable": true,
+  "is_high_risk_standalone": true
+}

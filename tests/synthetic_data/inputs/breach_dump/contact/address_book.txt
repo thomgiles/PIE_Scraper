@@ -1,0 +1,13 @@
+Contact export from student support mailbox
+
+Priya Shah
+Email: priya.shah@example.ac.uk
+Student ID: STU6677889
+Mobile: +44 7700 900889
+Home address: 10 Example Road, Nottingham, NG7 2RD
+
+Evelyn Taylor now Evelyn Brown
+Email: evelyn.brown@example.ac.uk
+Student ID: STU7788990
+Date of birth: 1997-06-30
+Postal address: 22 Demo Street, Nottingham, NG1 1AA

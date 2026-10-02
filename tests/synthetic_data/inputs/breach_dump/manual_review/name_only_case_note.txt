@@ -1,0 +1,5 @@
+Unstructured case note copied from a shared folder.
+
+The note mentions Evelyn Brown and Maria Gomez by name only.
+No student ID, staff ID, email address, CAS number or other unique identifier is present in this file.
+This is intended to exercise the manual review queue.

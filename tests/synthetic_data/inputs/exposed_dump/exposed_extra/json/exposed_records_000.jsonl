@@ -1,0 +1,5 @@
+{"student_id": "STA8899001", "full_name": "Sam Green", "email": "sam.green@example.ac.uk", "dob": "1998-01-01", "phone": "07700900000", "passport_number": "P700000000", "case_status": "exposed_dataset_supplement"}
+{"student_id": "STU1234567", "full_name": "Jane Smith", "email": "jane.smith@example.ac.uk", "dob": "1999-02-02", "phone": "07700900001", "passport_number": "P700000001", "case_status": "exposed_dataset_supplement"}
+{"student_id": "STU2233445", "full_name": "Maria Gomez", "email": "maria.gomez@example.ac.uk", "dob": "2000-03-03", "phone": "07700900002", "passport_number": "P700000002", "case_status": "exposed_dataset_supplement"}
+{"student_id": "STU3344556", "full_name": "Li Wei", "email": "li.wei@example.ac.uk", "dob": "2001-04-04", "phone": "07700900003", "passport_number": "P700000003", "case_status": "exposed_dataset_supplement"}
+{"student_id": "STU5550001", "full_name": "Robin Missing", "email": "robin.missing@example.ac.uk", "dob": "2002-05-05", "phone": "07700900004", "passport_number": "P700000004", "case_status": "exposed_dataset_supplement"}

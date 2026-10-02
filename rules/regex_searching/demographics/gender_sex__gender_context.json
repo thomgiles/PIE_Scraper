@@ -1,0 +1,21 @@
+{
+  "evidence_type": "Gender/Sex",
+  "pattern_name": "demographics_gender_context",
+  "confidence": "medium",
+  "regex": "\\b(?:gender|sex)\\b\\s*[:=#-]?\\s*(?P<value>male|female|non[-\\s]?binary|other|prefer\\s*not\\s*to\\s*say|m|f)\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "context_guard": {
+    "required_tokens": [
+      "gender",
+      "sex"
+    ]
+  },
+  "line_triggers": [
+    "gender",
+    "sex"
+  ],
+  "risk_tier": "tier_2_sensitive_contextual",
+  "max_per_cluster": 2
+}

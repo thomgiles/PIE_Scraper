@@ -1,0 +1,61 @@
+{
+  "source_type": "curated_seed_with_official_target",
+  "source_urls": [
+    "https://www.ucas.com/"
+  ],
+  "vocabularies": {
+    "applicant_identity_and_status": {
+      "header_aliases": [
+        "applicant id",
+        "application number",
+        "application nbr",
+        "application no",
+        "ucas id",
+        "student support number"
+      ]
+    },
+    "domicile_nationality_residency": {
+      "header_aliases": [
+        "domicile",
+        "nationality",
+        "residency",
+        "residence category",
+        "fee status"
+      ]
+    },
+    "disability_support": {
+      "header_aliases": [
+        "disability",
+        "individual needs",
+        "support needs",
+        "adjustments",
+        "disabled students allowance"
+      ]
+    },
+    "contextual_and_widening_participation": {
+      "header_aliases": [
+        "care leaver",
+        "care experienced",
+        "estranged",
+        "young carer",
+        "free school meals",
+        "refugee",
+        "asylum seeker",
+        "forced migrant",
+        "widening participation",
+        "contextual flag",
+        "contextual data"
+      ]
+    },
+    "finance_and_support": {
+      "header_aliases": [
+        "household income",
+        "principal earner income",
+        "maintenance grant",
+        "special support grant",
+        "special support element",
+        "number of sponsors"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_type": "CAS Number",
+  "pattern_name": "student_records_cas_number_context",
+  "confidence": "high",
+  "regex": "(?i:\\bCAS(?:\\s*(?:number|no|id))?\\b)\\s*[:=#]\\s*(?P<value>[A-Z0-9]{14})\\b",
+  "flags": [],
+  "validator": "valid_cas_number",
+  "line_triggers": [
+    "cas"
+  ],
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 3,
+  "normalization": "compact_upper",
+  "is_high_risk_standalone": true
+}

@@ -1,0 +1,6 @@
+Manual exposed-data review note
+person id: STA5566778
+full name: Ben Turner
+email: ben.turner@example.ac.uk
+date of birth: 2000-03-03
+phone: 07700900002

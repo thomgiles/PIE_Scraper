@@ -1,0 +1,8 @@
+{
+  "canonical_header": "BRP",
+  "pattern_name": "identity_documents_brp_column",
+  "header_patterns": [
+    "\\bbrp\\b",
+    "\\bbiometric\\s*residence\\s*permit\\b"
+  ]
+}

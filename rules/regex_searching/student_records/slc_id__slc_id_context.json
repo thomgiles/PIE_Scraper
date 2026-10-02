@@ -1,0 +1,16 @@
+{
+  "evidence_type": "SLC ID",
+  "pattern_name": "student_records_slc_id_context",
+  "confidence": "high",
+  "regex": "\\bSLC(?:\\s*(?:id|number|no))?\\b\\s*[:=#-]?\\s*(?P<value>[A-Z0-9]{6,20})\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "line_triggers": [
+    "slc"
+  ],
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 3,
+  "normalization": "compact_upper",
+  "is_identifiable": true
+}

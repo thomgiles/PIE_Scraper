@@ -1,0 +1,19 @@
+{
+  "evidence_type": "Driving Licence",
+  "pattern_name": "identity_documents_uk_driving_licence_context",
+  "confidence": "high",
+  "regex": "\\b(?:driving|driver)[_\\s-]*licen[cs]e(?:[_\\s-]*(?:number|no|id))?\\b\\s*[:=#-]?\\s*(?P<value>[A-Z9]{5}\\d{6}[A-Z9]{2}[A-Z0-9]{3})(?:\\d{2})?\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "line_triggers": [
+    "driving",
+    "driver"
+  ],
+  "validator": "valid_uk_driving_licence",
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 3,
+  "normalization": "compact_upper",
+  "is_identifiable": true,
+  "is_high_risk_standalone": true
+}

@@ -1,0 +1,8 @@
+{
+  "canonical_header": "UCAS ID",
+  "pattern_name": "student_records_ucas_id_column",
+  "header_patterns": [
+    "\\bucas\\b",
+    "\\bucas\\s*(?:id|number|no|personal\\s*id)\\b"
+  ]
+}

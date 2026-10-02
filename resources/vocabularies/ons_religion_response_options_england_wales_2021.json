@@ -1,0 +1,62 @@
+{
+  "source_type": "official_source",
+  "source_id": "ons_religion_england_wales_census_2021",
+  "jurisdiction": "England and Wales",
+  "version_note": "Census-style religion response options used for inference and grouping",
+  "religions": [
+    "No religion",
+    "Christian",
+    "Buddhist",
+    "Hindu",
+    "Jewish",
+    "Muslim",
+    "Sikh",
+    "Any other religion"
+  ],
+  "aliases": {
+    "No religion": [
+      "none",
+      "no religion",
+      "not religious",
+      "atheist",
+      "agnostic"
+    ],
+    "Christian": [
+      "christian",
+      "catholic",
+      "roman catholic",
+      "protestant",
+      "church of england",
+      "anglican",
+      "methodist",
+      "baptist"
+    ],
+    "Buddhist": [
+      "buddhist",
+      "buddhism"
+    ],
+    "Hindu": [
+      "hindu",
+      "hinduism"
+    ],
+    "Jewish": [
+      "jewish",
+      "judaism",
+      "jew"
+    ],
+    "Muslim": [
+      "muslim",
+      "islam",
+      "islamic"
+    ],
+    "Sikh": [
+      "sikh",
+      "sikhism"
+    ],
+    "Any other religion": [
+      "other religion",
+      "other faith",
+      "spiritual"
+    ]
+  }
+}

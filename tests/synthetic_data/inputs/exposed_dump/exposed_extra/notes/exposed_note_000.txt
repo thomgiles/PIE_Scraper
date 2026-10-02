@@ -1,0 +1,6 @@
+Manual exposed-data review note
+person id: EXT9001005
+full name: Iris Lane
+email: iris.lane.external@example.ac.uk
+date of birth: 1998-01-01
+phone: 07700900000

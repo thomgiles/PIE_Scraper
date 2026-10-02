@@ -1,0 +1,10 @@
+{
+  "canonical_header": "first name",
+  "name_part": "first",
+  "pattern_name": "name_first_name_column",
+  "header_patterns": [
+    "\\bfirst\\s*name\\b",
+    "\\bforename\\b",
+    "\\bgiven\\s*name\\b"
+  ]
+}

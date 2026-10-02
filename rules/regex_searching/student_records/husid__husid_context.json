@@ -1,0 +1,17 @@
+{
+  "evidence_type": "HUSID",
+  "pattern_name": "student_records_husid_context",
+  "confidence": "high",
+  "regex": "\\bHUSID\\b\\s*[:=#-]?\\s*(?P<value>\\d{13})\\b",
+  "flags": [
+    "IGNORECASE"
+  ],
+  "line_triggers": [
+    "husid"
+  ],
+  "validator": "valid_husid_entry_year",
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 3,
+  "normalization": "compact_upper",
+  "is_identifiable": true
+}

@@ -1,0 +1,13 @@
+flowchart TD
+    EmailSuffix[Email suffix] --> EmailSplit[Expand Email into Institutional/Personal categories]
+    Identity[Identity anchor config] --> AnchorTypes[Build strong and compound anchor sets]
+    Regex[Regex rules] --> Patterns[Compile regex patterns]
+    Regex --> Tiers[Build evidence tiers]
+    Regex --> Counts[Build file-summary count columns]
+    Regex --> Matrix[Build risk-matrix has_* columns]
+    Regex --> ClusterLimits[Read max_per_cluster limits]
+    Table[Table-column rules] --> HeaderMatchers[Compile table header matchers]
+    AnchorTypes --> ClusterLimits
+    EmailSplit --> Patterns
+    EmailSplit --> Counts
+    EmailSplit --> Matrix

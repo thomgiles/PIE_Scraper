@@ -1,0 +1,9 @@
+{
+  "evidence_type": "IP Address",
+  "pattern_name": "technical_ipv4",
+  "confidence": "low",
+  "regex": "\\b(?:(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)\\b",
+  "flags": [],
+  "risk_tier": "tier_3_supporting_evidence",
+  "max_per_cluster": 10
+}

@@ -1,0 +1,31 @@
+{
+  "canonical_header": "marital status",
+  "pattern_name": "demographics_marital_status_column",
+  "header_patterns": [
+    "\\bmarital\\s*status\\b",
+    "\\bmaritalstatus\\b",
+    "\\brelationship\\s*status\\b",
+    "\\bcivil\\s*partnership\\s*status\\b"
+  ],
+  "evidence_type": "Marital Status",
+  "emit_cell_value": true,
+  "context_guard": {
+    "required_tokens": [
+      "marital",
+      "relationship",
+      "partnership"
+    ],
+    "required_phrases": [
+      "marital status",
+      "relationship status",
+      "civil partnership status"
+    ]
+  },
+  "confidence": "high",
+  "risk_tier": "tier_2_sensitive_contextual",
+  "normalization": "none",
+  "validator": "valid_marital_status_value",
+  "risk_roles": [
+    "marital_status"
+  ]
+}

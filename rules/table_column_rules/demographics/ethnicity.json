@@ -1,0 +1,25 @@
+{
+  "canonical_header": "ethnicity",
+  "pattern_name": "demographics_ethnicity_column",
+  "header_patterns": [
+    "\\bethnicity\\b",
+    "\\brace\\b"
+  ],
+  "evidence_type": "Ethnicity",
+  "emit_cell_value": true,
+  "context_guard": {
+    "required_tokens": [
+      "ethnicity",
+      "ethnic",
+      "race",
+      "racial"
+    ]
+  },
+  "confidence": "high",
+  "risk_tier": "tier_2_sensitive_contextual",
+  "normalization": "none",
+  "validator": "valid_ethnicity_value",
+  "risk_roles": [
+    "ethnicity"
+  ]
+}

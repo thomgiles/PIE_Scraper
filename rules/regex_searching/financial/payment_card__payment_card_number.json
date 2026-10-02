@@ -1,0 +1,11 @@
+{
+  "evidence_type": "Payment Card",
+  "pattern_name": "financial_payment_card_number",
+  "confidence": "high",
+  "regex": "\\b(?:\\d[ -]*?){13,19}\\b",
+  "flags": [],
+  "validator": "valid_luhn",
+  "risk_tier": "tier_1_strong_identifier",
+  "max_per_cluster": 3,
+  "is_high_risk_standalone": true
+}

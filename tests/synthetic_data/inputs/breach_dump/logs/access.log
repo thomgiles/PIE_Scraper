@@ -1,0 +1,3 @@
+2026-01-05T09:15:10Z INFO login username=jsmith email=jane.smith@example.ac.uk
+2026-01-05T09:18:22Z DEBUG payment endpoint accessed by bturner person_id=5566778
+2026-01-05T09:19:30Z ERROR password = sample-log-password

@@ -1,0 +1,9 @@
+{
+  "canonical_header": "National Insurance Number",
+  "pattern_name": "identity_documents_national_insurance_number_column",
+  "header_patterns": [
+    "\\bnational\\s*insurance\\b",
+    "\\bni\\s*number\\b",
+    "\\bnino\\b"
+  ]
+}
