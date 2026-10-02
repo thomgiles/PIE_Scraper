@@ -13,7 +13,7 @@ Operationally this is the direct-streaming scanner:
 - discovery writes atomic evidence directly to CSV;
 - resume modes rebuild from those CSV artefacts;
 - XML can be scanned in `fast` or `structured` mode;
-- Stage 2 clusters from linked evidence rather than from a database layer.
+- Stage 5 clusters from linked evidence rather than from a database layer.
 """
 
 from concurrent.futures import FIRST_COMPLETED, ProcessPoolExecutor, wait

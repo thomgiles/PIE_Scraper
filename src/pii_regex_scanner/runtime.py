@@ -3367,7 +3367,7 @@ def parse_args(argv=None):
         default="",
         help=(
             "Profiling mode. 'standalone' rescans table/structured sources and writes "
-            "non-disclosive profiling outputs and exits. 'integrated' runs profiling/schema planning "
+            "profile metrics and capped source-value previews and exits. 'integrated' runs profiling/schema planning "
             "as the linear Stage 3 before Stage 4 discovery/searching. 'create_rules' reads an existing profile output "
             "directory and writes draft table-column JSON rules for review. "
             "'columns' is accepted as a backward-compatible alias for 'standalone'."
@@ -3392,7 +3392,7 @@ def parse_args(argv=None):
         choices=["standalone", "disabled", "integrated"],
         default="integrated",
         help=(
-            "Source-file preprocessing mode. 'integrated' discovers/hashes/groups files before Stage 1; "
+            "Source-file preprocessing mode. 'integrated' discovers/hashes/groups files in Stage 1; "
             "'disabled' skips this pass entirely; 'standalone' builds the reusable file index and exits."
         ),
     )
@@ -3410,9 +3410,10 @@ def parse_args(argv=None):
         "--index-dir",
         default="",
         help=(
-            "Reusable index directory. If present, existing indexes in this folder are trusted and reused; "
+            "Reusable index directory; defaults to <output-dir>/7.Reporting/indexes. "
+            "Existing indexes in this folder are trusted and reused; "
             "missing indexes are recreated by the relevant preprocessing mode. Contains file.index.json, "
-            "discovery.json, person-tables.index.json, and future profile/schema indexes."
+            "discovery.json, and person-tables.index.json when person tables are supplied."
         ),
     )
     parser.add_argument(

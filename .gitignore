@@ -6,3 +6,7 @@ venv/
 .pytest_cache/
 build/
 dist/
+
+# Locally generated reports can contain source paths or personal data.
+/reports/report.txt
+/reports/report.docx

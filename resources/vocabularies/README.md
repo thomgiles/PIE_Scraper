@@ -22,6 +22,8 @@ What is here:
   - curated education/public-sector support-status terms
 - `country_name_and_nationality_seed.json`
   - curated seed country/nationality aliases
+- `country_names_babel_en.json`
+  - generated English country-name vocabulary used alongside the curated seed
 - `nhs_demographic_code_sets_seed.json`
   - NHS-oriented demographic/status terms and common administrative labels
 - `hesa_student_data_terms_seed.json`

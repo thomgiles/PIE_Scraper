@@ -2,6 +2,8 @@
 
 This folder contains the packaged regex scanner, rules, tests, documentation, and reporting utilities.
 
+This README describes the v0.5 seven-stage workflow. Run the examples from the repository root unless a command explicitly changes directory.
+
 ## Command-line flags
 
 ### Input and output
@@ -16,9 +18,9 @@ This folder contains the packaged regex scanner, rules, tests, documentation, an
 ### Scanning
 
 - `--workers N`: Stage 4 scanning process workers. Default: `0`, which auto-selects logical CPU count minus one, with a minimum of one worker and no more workers than queued file targets. Pass a positive integer to force an exact worker count.
-- `--file-preprocessing standalone|disabled|integrated`: source-file preprocessing mode. Default: `integrated`, which discovers, hashes, groups duplicate files, and writes `1.File_Preprocessing/file.index.json` before scanning. `standalone` builds/reuses the file index and exits. `disabled` skips this pass entirely.
+- `--file-preprocessing standalone|disabled|integrated`: source-file preprocessing mode. Default: `integrated`, which discovers, hashes, groups duplicate files, and writes `7.Reporting/indexes/file.index.json` before scanning. `standalone` builds/reuses the file index and exits. `disabled` skips this pass entirely.
 - `--discovery-preprocessing standalone|disabled|integrated`: worker discovery/reference-data preprocessing mode. Default: `integrated`, which prepares worker-ready discovery artefacts before discovery/searching. `standalone` builds reusable discovery artefacts and exits. `disabled` leaves workers to load raw rules/person tables.
-- `--index-dir PATH`: reusable index folder. If supplied and an index exists in the folder, it is trusted and reused; missing indexes are recreated by the relevant preprocessing mode. The folder contains `file.index.json`, `discovery.json`, `person-tables.index.json`, and future table-profile/schema indexes. Without `--index-dir`, indexes are written to their stage folders.
+- `--index-dir PATH`: reusable index folder. Defaults to `7.Reporting/indexes/` under `--output-dir`. Existing indexes are trusted and reused; missing indexes are recreated by the relevant preprocessing mode. The folder contains `file.index.json`, `discovery.json`, and `person-tables.index.json` when person tables are supplied. Profile and schema-plan CSVs remain under `3.Profiling/`.
 - `--hash-workers N`: Stage 1 content-hashing processes. Default: `0`, which uses up to twice the scan worker count, capped at 16 and never above the number of files being hashed. This only applies to files selected by `--hash-mode`.
 - `--nlp [TRUE|FALSE]`: enables optional NLP-assisted header/context heuristics for profiling and structured/header-aware scanning. Default: `FALSE`.
 - `--scan-images [TRUE|FALSE]`: enables image OCR. Default: `FALSE`.
@@ -37,7 +39,7 @@ This folder contains the packaged regex scanner, rules, tests, documentation, an
 
 ### Profiling
 
-- `--profile standalone`: runs only the column/structured-data profiler. It rescans supported table and structured sources and writes non-disclosive profiling outputs.
+- `--profile standalone`: runs only the column/structured-data profiler. It rescans supported table and structured sources and writes profile metrics and capped source-value previews for review. Those previews can contain personal data.
 - `--profile integrated`: runs profiling/schema planning as Stage 3 before Stage 4 discovery/searching, then uses safe actionable schema-plan decisions to route relevant regex rules or emit validated header-confirmed cell values. It also writes `3.Profiling/schema_plan.csv` so the routing decisions can be reviewed.
 - `--profile create_rules`: reads an existing profile output folder and writes draft table-column JSON rules under `draft_table_column_rules/` for manual review.
 - `--profile columns`: backward-compatible alias for `standalone`.
@@ -66,7 +68,7 @@ The v0.5 pipeline uses explicit linear stage names:
 - Stage 7 reporting: `--resume reporting`.
 
 ```bash
-python3 PiiScraper/run_scanner.py --help
+python3 run_scanner.py --help
 ```
 
 ## Scanner
@@ -76,21 +78,21 @@ python3 PiiScraper/run_scanner.py --help
 Run with one or more person lists:
 
 ```bash
-python3 PiiScraper/run_scanner.py \
-  --root PiiScraper/tests/synthetic_data/inputs/breach_dump \
-  --output-dir PiiScraper/tests/synthetic_data/outputs/breach_dump \
-  --person-tables PiiScraper/tests/synthetic_data/inputs/synthetic_slim_contacts.csv \
-  --rules PiiScraper/rules \
+python3 run_scanner.py \
+  --root tests/synthetic_data/inputs/breach_dump \
+  --output-dir tests/synthetic_data/outputs/breach_dump \
+  --person-tables tests/synthetic_data/inputs/synthetic_slim_contacts.csv \
+  --rules rules \
   --email-suffix example.ac.uk \
   --workers 4
 ```
 
 ```powershell
-python PiiScraper/run_scanner.py `
-  --root PiiScraper/tests/synthetic_data/inputs/breach_dump `
-  --output-dir PiiScraper/tests/synthetic_data/outputs/breach_dump `
-  --person-tables PiiScraper/tests/synthetic_data/inputs/synthetic_slim_contacts.csv `
-  --rules PiiScraper/rules `
+python run_scanner.py `
+  --root tests/synthetic_data/inputs/breach_dump `
+  --output-dir tests/synthetic_data/outputs/breach_dump `
+  --person-tables tests/synthetic_data/inputs/synthetic_slim_contacts.csv `
+  --rules rules `
   --email-suffix example.ac.uk `
   --scan-images FALSE `
   --workers 4
@@ -106,6 +108,7 @@ src/pii_regex_scanner/
   rules.py         regex/table rules, identity anchors, and derived rule metadata
   extraction.py    file typing, table/structured/document extraction, target discovery
   scanning.py      atomic evidence scanning, XML scopes, scan chunks, per-file processing
+  profiling.py     column profiles, schema plans, table families, and rule candidates
   summaries.py     file/entity/regex summary builders
   clustering.py    linked-evidence clustering and cluster scoring
   people.py        person-table loading, person matching, risk/evidence outputs
@@ -113,26 +116,25 @@ src/pii_regex_scanner/
   runtime.py       direct CSV writer, resume modes, CLI parsing, and run orchestration
   engine.py        compatibility alias to pipeline
   __main__.py      python -m entry point
-  __init__.py      package metadata
+  __init__.py      public package exports
 ```
 
 Run the package directly without installation:
 
 ```bash
-PYTHONPATH=PiiScraper/src python3 -m pii_regex_scanner --help
+PYTHONPATH=src python3 -m pii_regex_scanner --help
 ```
 
 Run the standard-library test suite:
 
 ```bash
-cd PiiScraper
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
 Build the workflow documentation:
 
 ```bash
-cd PiiScraper/documentation
+cd documentation
 python3 render_workflow_diagrams.py
 quarto render PII_REGEX_WORKFLOW_WRITEUP.qmd --to docx
 python3 build_workflow_reference.py --finalize
@@ -141,7 +143,7 @@ python3 build_workflow_reference.py
 
 By default v0.5 only searches for email evidence using a built-in email rule.
 
-Use `--rules PiiScraper/rules` for the standard full synthetic test run. That root contains grouped regex rules under `rules/regex_searching/` and table-column detection rules in `rules/table_column_rules/`.
+Use `--rules rules` for the standard full synthetic test run. That root contains grouped regex rules under `rules/regex_searching/` and table-column detection rules in `rules/table_column_rules/`.
 
 Synthetic inputs are split into named datasets. `tests/synthetic_data/inputs/breach_dump` is the original fixture. `tests/synthetic_data/inputs/exposed_dump` is a larger fixture based on `breach_dump`, with two low-value files omitted and 68 additional exposed-data files added. Outputs are written to matching folders under `tests/synthetic_data/outputs/breach_dump` and `tests/synthetic_data/outputs/exposed_dump`.
 
@@ -161,7 +163,7 @@ The scanner has no RAM limit, RSS monitor, finding buffer, pending multiplier, o
 
 Stage 4 progress reports cumulative worker time spent hashing, extracting and applying regex rules. These figures are cumulative across parallel workers, so their sum can exceed wall-clock runtime. The final phase-time line is useful for identifying whether a live run is limited by source I/O, document extraction, or regex work.
 
-`--profile standalone` and `integrated` use the same process-worker model as Stage 4 where possible. The profiler reports active worker/file progress and, for table-like sources, per-file progress similar to regex searching. In `integrated` mode, Stage 3 builds the schema plan before Stage 4 begins; only supported explicit/inferred headers become active scan routes. Headerless, value-only, and medium-confidence sensitive suggestions remain review-only.
+`--profile standalone` and `integrated` use the same process-worker model as Stage 4 where possible. The profiler reports active worker/file progress and, for table-like sources, per-file progress similar to regex searching. In `integrated` mode, Stage 3 builds the schema plan before Stage 4 begins; only supported explicit/inferred headers become active scan routes. Headerless, value-only, and medium-confidence sensitive suggestions normally remain review-only; schema-family propagation can supply types for unresolved headerless columns when matching headered examples agree.
 
 Use `--email-suffix example.ac.uk` to split email matches into `Institutional Email` for addresses ending in that suffix and `Personal Email` for all other email addresses. Multiple suffixes can be comma-separated or supplied by repeating the flag, for example `--email-suffix example.ac.uk,nottingham.* --email-suffix "*.trusted.example"`. Literal suffixes match on domain boundaries, so `example.ac.uk` matches `mail.example.ac.uk` but not `badexample.ac.uk`; wildcard patterns such as `nottingham.*` match domains such as `nottingham.ac.uk` and `mail.nottingham.edu`.
 
@@ -194,7 +196,7 @@ Structural parse errors fall back automatically. Record inference remains heuris
 
 ## Rules
 
-The built-in default is a hard-coded email rule. External rules are loaded with `--rules`, usually from `PiiScraper/rules`.
+The built-in default is a hard-coded email rule. External rules are loaded with `--rules`, usually from `rules`.
 
 Each `*.json` file under `rules/regex_searching/` is one regex search rule. Rules can be grouped in category folders such as `identity_documents`, `demographics`, or `financial`:
 
@@ -265,15 +267,17 @@ The profiler also uses local vocabulary resources under `resources/vocabularies/
 
 ## Main outputs
 
-Outputs are now grouped by workflow stage under `--output-dir`:
+Outputs follow the seven-stage workflow under `--output-dir`. Stages 1 and 2 share a reusable index directory, which defaults to `7.Reporting/indexes/` and can be changed with `--index-dir`:
 
-- `1.File_Preprocessing/`: source file index and duplicate-file metadata.
-- `2.Discovery_Preprocessing/`: discovery/rule/person-table indexes.
+- `7.Reporting/indexes/file.index.json`: Stage 1 source file index and duplicate-file metadata.
+- `7.Reporting/indexes/discovery.json` and `person-tables.index.json`: Stage 2 discovery/rule/person-table indexes.
 - `3.Profiling/`: profile and schema-plan outputs.
 - `4.Regex_Scanning/`: atomic evidence, linked evidence, file summaries, and regex summaries.
 - `5.Clustering/`: inferred person clusters and cluster-member audit rows.
 - `6.Reidentification/`: known-person and no-list/unknown-person outputs.
 - `7.Reporting/`: run metadata, manifests, worker timing diagnostics, and cross-output reports.
+
+The committed synthetic output baselines retain legacy stage-folder names. Fresh runs use the v0.5 layout below, and the comparison utility accepts both layouts.
 
 Key files are:
 
@@ -308,41 +312,47 @@ The scanner can also emit `Identity Document File` evidence for document metadat
 Profiling writes these files to `3.Profiling/`:
 
 - `columns_all_profiles.csv`: one row per observed table/structured label, including labels already resolved by current rules.
-- `columns_unknown_profiles.csv`: labels not resolved by the current rules, with non-disclosive metrics and a small capped sample preview for review.
+- `columns_unknown_profiles.csv`: labels not resolved by the current rules, with aggregate metrics and a small capped source-value preview for review.
 - `columns_rule_candidates.csv`: grouped candidates that look suitable for reviewed table-column rule creation.
 - `columns_review_candidates.csv`: grouped candidates that look meaningful but should remain manual-review candidates rather than automatic evidence rules.
 - `value_type_candidates.csv`: unresolved columns whose value distributions strongly resemble known types even when the label is weak or generic.
 - `rule_coverage.csv`: current table-column rule coverage, including likely stale or unobserved rules.
 - `3.Profiling/schema_plan.csv`: per-file/per-table/per-column plan showing raw header, resolved header, suggested type, confidence, reason, scan action, linking scope, `orientation`, `orientation_confidence`, `orientation_reason`, `detected_separator`, `schema_signature`, and `schema_reused_from`. With `--profile integrated`, actionable rows drive Stage 4 routing. `route_suggested_rules` routes relevant regex rules; `route_suggested_rules_and_emit_cell_value` also permits validated header-confirmed cell emission. Review-only rows remain raw fallback/review diagnostics and do not emit sensitive evidence.
+- `table_sketches.csv`: one row per observed table, with its schema signature, orientation, header mode, resolved/suggested column types, and schema-family status.
+- `table_families.csv`: tables grouped by schema signature, including consensus column types, propagated-column counts, and conflicts. Unresolved headerless columns can inherit types from matching headered tables when those examples agree; conflicting families do not propagate types.
 - `draft_table_column_rules/`: created by `--profile create_rules`; contains draft JSON rules plus `draft_rule_manifest.csv` for review.
 
 The profiler is intentionally conservative. `columns_rule_candidates.csv` is not a ruleset; it is a review queue. Draft rules should be inspected before they are moved into `rules/table_column_rules/`.
+
+Profile previews, schema plans, person-list outputs, and detailed evidence can contain source values or identifying labels. File indexes, run manifests, and timing logs can contain source paths and configuration. Review these artefacts before sharing them or committing them to Git.
 
 ## Comparing Two Output Folders
 
 Use `reports/Compare_pii_regex_outputs.v0.1.py` to compare two scanner output folders:
 
 ```bash
-python3 PiiScraper/reports/Compare_pii_regex_outputs.v0.1.py \
-  PiiScraper/tests/synthetic_data/outputs/breach_dump \
-  PiiScraper/tests/synthetic_data/outputs/exposed_dump \
-  --person-table PiiScraper/tests/synthetic_data/inputs/synthetic_slim_contacts.csv
+python3 reports/Compare_pii_regex_outputs.v0.1.py \
+  tests/synthetic_data/outputs/breach_dump \
+  tests/synthetic_data/outputs/exposed_dump \
+  --person-table tests/synthetic_data/inputs/synthetic_slim_contacts.csv
 ```
 
 By default this writes `report.txt` and the known-person detail CSVs to:
 
 ```text
-PiiScraper/tests/synthetic_data/outputs/breach_dump_vs_exposed_dump/
+tests/synthetic_data/outputs/breach_dump_vs_exposed_dump/
 ```
 
 Use `--output-dir <folder>` to choose a different comparison folder. The report filename is always `report.txt`.
 
 The report compares evidence terms, person-cluster identity terms, person-list presence, and no-list/unknown signature terms. Evidence terms are `evidence_type=normalized_value` pairs, so the same email address or identifier found in both datasets counts as conserved even if it came from a different file or row. For v0.5 scanner outputs, no-list comparison prefers `6.Reidentification/clusters_not_in_list.csv`; when only the sanitized summary exists, it resolves each row to `5.Clustering/clusters.csv` by `person_cluster_id` before comparing identity terms. The report still accepts legacy v3/v4 output names.
 
+For Word report generation, see [the reports README](reports/README.md). `reports/report.txt` and `reports/report.docx` are local report files and are not included in the repository.
+
 ## Folder layout
 
 - `documentation/`: workflow QMD, rendered Word documents, diagrams, and documentation build code.
-- `reports/`: output comparison, lay-report generation code, and sample report artefacts.
+- `reports/`: output comparison and lay-report generation utilities.
 - `rules/`: regex, table-column, and person-identity configuration.
 - `src/pii_regex_scanner/`: packaged scanner implementation.
 - `tests/`: unit and integration tests.

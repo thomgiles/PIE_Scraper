@@ -10,11 +10,11 @@ The report is designed for non-technical readers. It focuses on:
   5. overall term conservation.
 
 Example:
-    python PII_regex/reports/build_report.py \
-      --report PII_regex/reports/report.txt \
-      --left-display "Exfiltrated-DWD" \
-      --right-display "Exposed-BFS" \
-      --output-docx pii_lay_summary_v1.0.docx \
+    python3 reports/build_report.py \
+      --report tests/synthetic_data/outputs/breach_dump_vs_exposed_dump/report.txt \
+      --left-display "Breach dump" \
+      --right-display "Exposed dump" \
+      --output-docx reports/report.docx \
       --overwrite
 
 Python dependencies:
