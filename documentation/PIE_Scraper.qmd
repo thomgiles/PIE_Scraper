@@ -1,15 +1,15 @@
 ---
-title: "PII Regex Scanner Workflow"
+title: "PIE_Scraper Workflow"
 format:
   docx:
     toc: true
     number-sections: false
-    reference-doc: PII_REGEX_WORKFLOW_REFERENCE.docx
+    reference-doc: templates/PIE_Scraper_styles.docx
 filters:
   - pagebreak-headings.lua
 ---
 
-# PII Regex Scanner Workflow
+# PIE_Scraper Workflow
 
 This guide documents the v0.5 seven-stage workflow. Run command examples from the repository root unless stated otherwise.
 
@@ -81,7 +81,7 @@ The workflow is shown in smaller sections so that preprocessing, scanning, clust
 
 ### Figure 1: Direct CSV streaming separates discovery, clustering, and reidentification into a linear pipeline
 
-![Scanning and evidence generation flow](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_01.png){width=80%}
+![Scanning and evidence generation flow](diagrams/diagram_01.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** The scanner streams discovered evidence to CSV and passes persisted linked-evidence records through distinct processing stages. **Methods/context.** The diagram follows the V0.5 execution path from command-line configuration and optional preprocessing to extraction, atomic evidence CSV writing, linked-evidence CSV writing, clustering, and optional person-table reidentification. **Description.** Reading from top to bottom, the blocks show stage inputs, processing operations, direct CSV artefacts, and reporting outputs. **Statistical details.** No statistical inference is performed; counts and risk values are deterministic summaries of detected evidence. **Definitions.** A source unit is one scanable line or structured record, while reidentification is the comparison of identity-qualified clusters and other anchor-bearing evidence with a supplied person-list table.
@@ -93,7 +93,7 @@ The clustering stage merges linked evidence rows into inferred people using conf
 
 ### Figure 2: Identity anchors merge eligible evidence before person-list matching
 
-![Person clustering workflow](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_02.png){width=80%}
+![Person clustering workflow](diagrams/diagram_02.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Only cluster-eligible evidence that supplies configured identity keys can contribute to cross-record person merging. **Methods/context.** Candidate evidence groups are evaluated against strong and compound anchors before union-find clustering. **Description.** The flow moves from linked evidence through eligibility checks, merge-key generation, cluster construction, and known-person comparison. **Statistical details.** Cluster counts are descriptive outputs; confidence labels are rule-based rather than estimated probabilities. **Definitions.** A strong anchor can form a key by itself, whereas a compound anchor requires every configured evidence type in the set.
@@ -105,7 +105,7 @@ Known-person processing compares the discovered dataset against the supplied per
 
 ### Figure 3: Known-table matching separates identified people from identity-qualified unknown identities
 
-![Known and unknown person outputs](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_03.png){width=80%}
+![Known and unknown person outputs](diagrams/diagram_03.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Person-table matches produce known-person outputs, while unmatched clusters or strong cluster-excluded anchors are reported as unknown only when they satisfy an identity-anchor rule. **Methods/context.** Cluster values, cluster-excluded linked-evidence values, and direct atomic evidence values are normalized and compared with anchors derived from the supplied person table. **Description.** The branches distinguish known exposure, non-disclosive unknown summaries, sensitive unknown-cluster audits, and optional detailed evidence files. **Statistical details.** Reported counts are exact record counts and do not quantify match uncertainty. **Definitions.** Non-disclosive means that direct discovered PII values are omitted; the sensitive audit retains values needed to explain cluster formation.
@@ -321,7 +321,7 @@ Rule loading happens before files are scanned. It also happens inside worker pro
 
 ### Figure 4: Deterministic rule-loading order keeps identity, regex, and table configuration consistent
 
-![Runtime rule-loading order](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_04.png){width=80%}
+![Runtime rule-loading order](diagrams/diagram_04.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Runtime behavior is reproducible because configuration is loaded in a fixed dependency order. **Methods/context.** Startup first applies the email suffix and email wildcard configuration, then identity anchors, regex rules, and table-column rules. **Description.** Each block represents one configuration step and the arrows show which derived settings must exist before the next step is built. **Statistical details.** No statistical operations occur during rule loading. **Definitions.** Rule-derived configuration means compiled regexes and semantic sets reconstructed from persisted JSON metadata.
@@ -329,7 +329,7 @@ Rule loading happens before files are scanned. It also happens inside worker pro
 
 ### Figure 5: Rule metadata generates the evidence, risk, and anchor collections used throughout scanning
 
-![Loaded rule-derived configuration](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_05.png){width=80%}
+![Loaded rule-derived configuration](diagrams/diagram_05.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** A small set of rule files expands into the runtime collections used for detection, summaries, risk scoring, and identity linkage. **Methods/context.** The loader validates rule metadata and rebuilds evidence types, normalization strategies, risk roles, tiers, and anchor priorities. **Description.** The diagram groups derived collections by the downstream behavior they control. **Statistical details.** These collections are categorical configuration, not fitted parameters. **Definitions.** A risk role is a semantic label such as email, name, or ID that lets differently named evidence types participate in common scoring logic.
@@ -963,7 +963,7 @@ The extraction stage first routes structured, tabular, document, image, and plai
 
 ### Figure 6: Structured records and tables are converted into bounded labelled units before regex matching
 
-![Structured and plain-text extraction routing](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_06.png){width=80%}
+![Structured and plain-text extraction routing](diagrams/diagram_06.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Structured and tabular inputs preserve record boundaries by becoming labelled scan units rather than one file-wide text stream. **Methods/context.** Content detection routes JSON, XML, YAML, delimited text, spreadsheets, and ordinary text through format-specific extraction. **Description.** Separate branches show structured-record inference, table labelling, and plain-text decoding before all routes converge on regex scanning. **Statistical details.** Depth, record, and field values are processing limits, not statistical thresholds. **Definitions.** A labelled unit is a flattened record or row whose field names remain adjacent to their values.
@@ -971,7 +971,7 @@ The extraction stage first routes structured, tabular, document, image, and plai
 
 ### Figure 7: Parser selection determines whether documents yield embedded text, OCR text, or an explicit no-text status
 
-![Document and image extraction routing](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_07.png){width=80%}
+![Document and image extraction routing](diagrams/diagram_07.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Each supported document family has a defined extraction route, and images produce text only when OCR is enabled. **Methods/context.** The scanner selects parsers from the detected content type and records extraction failures or disabled OCR explicitly. **Description.** Document branches identify embedded-text parsers, while the image branch separates OCR-enabled and OCR-disabled outcomes. **Statistical details.** Extraction success is a processing status and no accuracy rate is inferred. **Definitions.** Embedded text is machine-readable content already present in a document; OCR is optical character recognition applied to image pixels.
@@ -1090,7 +1090,7 @@ Tables are handled by turning row data into plain labelled text.
 
 ### Figure 8: Canonical header labelling preserves row boundaries while enabling contextual evidence matching
 
-![Table handling pipeline](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_08.png){width=80%}
+![Table handling pipeline](diagrams/diagram_08.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Table rows remain separate evidence units while canonical headers supply the context needed by field-sensitive detection rules. **Methods/context.** Header patterns resolve source labels before non-empty cells are serialized as labelled row text. **Description.** The flow shows header recognition, canonicalization, row assembly, code-derived Name and Address handling, and regex matching. **Statistical details.** Header matches are deterministic regex decisions rather than probabilistic classifications. **Definitions.** A canonical header is the standardized field label assigned to one or more source-header variants.
@@ -1401,7 +1401,7 @@ The clustering phase merges linked-evidence rows that share strong or defensible
 
 ### Figure 9: Strong and compound identity keys merge candidates while unshared evidence remains isolated
 
-![Person clustering and anchor merging](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_09.png){width=80%}
+![Person clustering and anchor merging](diagrams/diagram_09.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Candidates merge only when they share a configured identity key; otherwise they remain isolated singleton clusters. **Methods/context.** Eligible evidence groups receive strong, compound, or fallback singleton keys and are merged with union-find. **Description.** The branches distinguish key construction before converging on connected components and persisted person clusters. **Statistical details.** Cluster confidence is rule-based and must not be interpreted as a probability of identity correctness. **Definitions.** Union-find is an algorithm that groups records connected by shared keys; a singleton contains one unmerged candidate.
@@ -1494,7 +1494,7 @@ Each person-list table is read as a flexible CSV, then converted into internal a
 
 ### Figure 10: Flexible person-table columns become normalized anchors without losing their original fields
 
-![Known-person table loading and anchor extraction](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_10.png){width=80%}
+![Known-person table loading and anchor extraction](diagrams/diagram_10.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Person-table values are normalized for matching while the source columns remain available in known-person reports. **Methods/context.** Decoded CSV rows pass through header resolution, person-key selection, email detection, regex validation, and composite-name assembly. **Description.** The diagram separates source preservation from the construction of internal keys and evidence-type/value anchors. **Statistical details.** Matching is exact after type-specific normalization and does not use fuzzy-match scores. **Definitions.** A person key identifies a reference-table row internally; an anchor is a normalized evidence pair used to associate that row with discovered records.
@@ -1807,7 +1807,7 @@ The following figures separate rule loading, scan-stage outputs, and person-stag
 
 ### Figure 11: Persisted rule files control evidence classification, risk scoring, and identity linkage at runtime
 
-![Rule inputs to runtime configuration](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_11.png){width=80%}
+![Rule inputs to runtime configuration](diagrams/diagram_11.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Persisted JSON rules are the common source for detection behavior and downstream identity logic. **Methods/context.** Regex, table-column, and person-identity configurations are loaded into validated runtime collections. **Description.** Input blocks on the left feed derived evidence, risk, header, and anchor structures used by scanning and clustering on the right. **Statistical details.** Rule metadata is declarative configuration and is not learned from the scanned dataset. **Definitions.** Runtime configuration is the in-memory compiled representation of the persisted rule files.
@@ -1815,7 +1815,7 @@ The following figures separate rule loading, scan-stage outputs, and person-stag
 
 ### Figure 12: Discovery produces normalized evidence and compatibility summaries before clustering begins
 
-![Dataset scan outputs](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_12.png){width=80%}
+![Dataset scan outputs](diagrams/diagram_12.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Discovery writes atomic evidence CSVs directly and derives review-oriented summaries from those outputs. **Methods/context.** Extracted source units are scanned, normalized, associated with regex provenance, and retained as candidate groups for clustering. **Description.** The output branches distinguish evidence detail, linked evidence, errors, file summaries, aggregate summaries, and downstream clusters. **Statistical details.** Summary totals are descriptive counts of persisted rows and unique normalized values. **Definitions.** Atomic evidence CSVs expose one finding per row for reviewers and comparison tooling.
@@ -1823,7 +1823,7 @@ The following figures separate rule loading, scan-stage outputs, and person-stag
 
 ### Figure 13: Identity-qualified clusters divide into known matches, sanitized unknown summaries, and sensitive audits
 
-![Known and unknown person outputs](PII_REGEX_WORKFLOW_WRITEUP_files/diagram_13.png){width=80%}
+![Known and unknown person outputs](diagrams/diagram_13.png){width=80%}
 
 ::: {.visual-notes}
 **Summary.** Reidentification separates reference-table matches from unmatched identity-qualified clusters and publishes different disclosure levels for each use. **Methods/context.** Cluster anchors are compared with normalized person-table anchors after clustering. **Description.** Output branches cover known-person summaries and matrices, non-disclosive unknown summaries, sensitive cluster audits, unmatched person-list people, and optional evidence detail. **Statistical details.** Match and evidence counts are exact output aggregates; no inferential statistics or fuzzy-match probabilities are reported. **Definitions.** An identity-qualified cluster satisfies at least one configured strong or compound person-identity rule.

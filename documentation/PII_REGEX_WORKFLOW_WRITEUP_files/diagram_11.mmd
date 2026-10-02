@@ -1,8 +1,0 @@
-flowchart TD
-    RegexRules[regex_searching/**/*.json] --> EvidenceTypes[Evidence types and risk tiers]
-    RegexRules --> RegexPatterns[Compiled regex patterns]
-    RegexRules --> LineTriggers[Line trigger index]
-    RegexRules --> MaxCluster[max_per_cluster limits]
-    TableRules[table_column_rules/**/*.json] --> HeaderMatchers[Compiled header matchers]
-    IdentityRules[person_identity_anchors.json] --> StrongAnchors[Strong anchor types]
-    IdentityRules --> CompoundAnchors[Compound anchor sets]

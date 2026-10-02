@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-OUTPUT_DIR = SCRIPT_DIR / "PII_REGEX_WORKFLOW_WRITEUP_files"
+OUTPUT_DIR = SCRIPT_DIR / "diagrams"
 FONT = "/System/Library/Fonts/Supplemental/Arial.ttf"
 FONT_BOLD = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
 

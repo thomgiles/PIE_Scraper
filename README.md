@@ -1,4 +1,4 @@
-# PII regex scanner
+# PIE_Scraper
 
 This folder contains the packaged regex scanner, rules, tests, documentation, and reporting utilities.
 
@@ -136,10 +136,11 @@ Build the workflow documentation:
 ```bash
 cd documentation
 python3 render_workflow_diagrams.py
-quarto render PII_REGEX_WORKFLOW_WRITEUP.qmd --to docx
+quarto render PIE_Scraper.qmd --to docx
 python3 build_workflow_reference.py --finalize
-python3 build_workflow_reference.py
 ```
+
+See [the documentation README](documentation/README.md) for the guide, diagram and style-template layout, and the shorter build for text-only changes.
 
 By default v0.5 only searches for email evidence using a built-in email rule.
 

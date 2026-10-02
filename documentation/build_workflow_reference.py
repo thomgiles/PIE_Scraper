@@ -9,8 +9,8 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-SOURCE_DOCX = SCRIPT_DIR / "PII_REGEX_WORKFLOW_WRITEUP.docx"
-OUTPUT_DOCX = SCRIPT_DIR / "PII_REGEX_WORKFLOW_REFERENCE.docx"
+SOURCE_DOCX = SCRIPT_DIR / "PIE_Scraper.docx"
+OUTPUT_DOCX = SCRIPT_DIR / "templates/PIE_Scraper_styles.docx"
 
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 W = f"{{{W_NS}}}"
